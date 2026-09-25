@@ -21,7 +21,7 @@ If a dependency of an addon is missing, that addon is skipped instead of throwin
 
 ## Players
 
-1. Subscribe to the mod on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=0), or download a release from the [Releases](https://github.com/Andx667/advanced_vanilla_objects/releases) page.
+1. Subscribe to the mod on the Steam Workshop once it is published, or download a release from the [Releases](https://github.com/Andx667/advanced_vanilla_objects/releases) page.
 2. Make sure CBA_A3 and ACE3 are also installed and enabled.
 3. Enable **Advanced Vanilla Objects**, CBA_A3, and ACE3 in your mod launcher.
 
