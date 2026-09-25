@@ -1,25 +1,28 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Reads the weather at a portable weather station and shows it to the player.
+ * Reads the weather at a portable weather station and shows it to the player. A windsock
+ * only shows the wind.
  * Wind is measured at the station's anemometer (top of the model) with ACE's
  * terrain and obstacle wind model. Temperature, humidity, dew point and pressure
  * come from ACE weather at the station's altitude and are left out when ACE
  * weather has no data (e.g. ACE weather simulation disabled).
  *
  * Arguments:
- * 0: Weather station <OBJECT>
+ * 0: Weather station or windsock <OBJECT>
+ * 1: Only the wind, for a windsock <BOOL> (default: false)
  *
  * Return Value:
  * None
  *
  * Example:
  * [cursorObject] call avo_weather_fnc_readData
+ * [cursorObject, true] call avo_weather_fnc_readData
  *
  * Public: No
  */
 
-params ["_station"];
+params ["_station", ["_windOnly", false, [false]]];
 
 private _lines = [];
 
@@ -39,7 +42,8 @@ if (_windSpeed < 0.3) then {
 
 // ACE weather values, published by the server
 if (
-    !isNil QACEGVAR(weather,currentTemperature)
+    !_windOnly
+    && {!isNil QACEGVAR(weather,currentTemperature)}
     && {!isNil QACEGVAR(weather,currentHumidity)}
     && {!isNil QACEGVAR(weather,currentOvercast)}
 ) then {
@@ -55,10 +59,13 @@ if (
     _lines pushBack format [LLSTRING(pressure), _pressure toFixed 1];
 };
 
-_lines pushBack format [LLSTRING(overcast), round (overcast * 100)];
-_lines pushBack format [LLSTRING(rain), round (rain * 100)];
-_lines pushBack format [LLSTRING(fog), round (fog * 100)];
+if (!_windOnly) then {
+    _lines pushBack format [LLSTRING(overcast), round (overcast * 100)];
+    _lines pushBack format [LLSTRING(rain), round (rain * 100)];
+    _lines pushBack format [LLSTRING(fog), round (fog * 100)];
+};
 
-private _text = format ["<t size='1.1' align='center'>%1</t><br/>%2", LLSTRING(title), _lines joinString "<br/>"];
+private _title = [LLSTRING(title), LLSTRING(windsockTitle)] select _windOnly;
+private _text = format ["<t size='1.1' align='center'>%1</t><br/>%2", _title, _lines joinString "<br/>"];
 
 [parseText _text, true, 10] call ACEFUNC(common,displayText);
