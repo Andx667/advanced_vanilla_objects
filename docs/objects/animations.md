@@ -1,6 +1,6 @@
 # Animations (`avo_animations`, `avo_animations_solar`)
 
-ACE actions for vanilla objects that have animations but no way to change them in the game. Most of them could only be changed with attributes in the editor. The classnames also cover everything derived from them. Only the variants that have the animation get its actions.
+ACE actions for vanilla objects that have animations but no way to change them in the game. Most of them could only be changed with attributes in the editor. The classnames also cover everything derived from them. Only the variants that have the animation get their actions.
 
 Every use raises the [`avo_animations_changed`](../scripting.md#avo_animations_changed) event.
 
