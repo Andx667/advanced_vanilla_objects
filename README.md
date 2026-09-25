@@ -8,8 +8,8 @@
     <a href="https://github.com/Andx667/advanced_vanilla_objects/issues">
         <img src="https://img.shields.io/github/issues-raw/Andx667/advanced_vanilla_objects.svg?style=flat-square&label=Issues" alt="Advanced Vanilla Objects Issues">
     </a>
-    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=0">
-        <img src="https://img.shields.io/steam/downloads/0.svg?style=flat-square&label=Downloads" alt="Advanced Vanilla Objects Downloads">
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808030863">
+        <img src="https://img.shields.io/steam/downloads/3808030863.svg?style=flat-square&label=Downloads" alt="Advanced Vanilla Objects Downloads">
     </a>
     <a href="https://github.com/Andx667/advanced_vanilla_objects/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="Advanced Vanilla Objects License">
@@ -25,7 +25,7 @@ __Advanced Vanilla Objects__ (AVO) fills vanilla objects with the functions they
 
 The project is entirely __open-source__ and any contributions are welcome.
 
-Steam Workshop: <https://steamcommunity.com/sharedfiles/filedetails/?id=0>
+Steam Workshop: <https://steamcommunity.com/sharedfiles/filedetails/?id=3808030863>
 Discord: <https://discord.gg/ag4v6kxYAa>
 
 ## Features

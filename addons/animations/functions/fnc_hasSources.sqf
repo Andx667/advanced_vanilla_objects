@@ -2,7 +2,7 @@
 /*
  * Author: Andx
  * Checks if an object has animation sources. The actions are added to base classes, and not
- * every variant of a class has all of its sources (drawers, doors, lamps), so this decides
+ * every variant of a class has all of its sources (drawers, doors), so this decides
  * whether an action is shown for a variant. Reads the config of the object's class.
  *
  * Arguments:
