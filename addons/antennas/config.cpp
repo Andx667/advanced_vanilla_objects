@@ -7,9 +7,7 @@ class CfgPatches {
         url = "https://github.com/Andx667/advanced_vanilla_objects";
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "avo_main",
-            "cba_main",
-            "ace_interact_menu",
+            "avo_common",
             "acre_sys_antenna",
             "acre_sys_gsa",
             "acre_ace_interact",

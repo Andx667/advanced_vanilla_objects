@@ -1,9 +1,10 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Position of the antenna tip for ACRE (`acre_antennaPosFnc`). Uses the top
- * centre of the object's bounding box, so the antenna sits at the real height
- * of the model instead of a hand-measured config value.
+ * Position of the antenna tip for ACRE (`acre_antennaPosFnc`). Uses the top centre of the
+ * object's bounding box, so the antenna sits at the real height of the model instead of a
+ * hand-measured config value. A wrapper, because ACRE passes the connector index as the
+ * second argument.
  *
  * Arguments:
  * 0: Antenna object <OBJECT>
@@ -20,10 +21,4 @@
 
 params ["_object", ""];
 
-(boundingBoxReal _object) params ["_min", "_max"];
-
-_object modelToWorldWorld [
-    ((_min select 0) + (_max select 0)) / 2,
-    ((_min select 1) + (_max select 1)) / 2,
-    _max select 2
-]
+[_object] call EFUNC(common,topPosition)

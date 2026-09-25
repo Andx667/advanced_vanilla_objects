@@ -24,12 +24,7 @@ params ["_station"];
 private _lines = [];
 
 // Wind, measured slightly above the model so the station itself does not shade the sensor
-(boundingBoxReal _station) params ["_min", "_max"];
-private _sensorPos = _station modelToWorldWorld [
-    ((_min select 0) + (_max select 0)) / 2,
-    ((_min select 1) + (_max select 1)) / 2,
-    (_max select 2) + 0.5
-];
+private _sensorPos = [_station, 0.5] call EFUNC(common,topPosition);
 private _useGradient = missionNamespace getVariable [QACEGVAR(advanced_ballistics,enabled), false];
 private _windSpeed = [_sensorPos, _useGradient, true, true] call ACEFUNC(weather,calculateWindSpeed);
 
