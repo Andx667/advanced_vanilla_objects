@@ -1,0 +1,16 @@
+/* Advanced Vanilla Objects brand color: dark green (the mod's dlcColor). */
+:root {
+  --md-primary-fg-color: #3B644D;
+  --md-primary-fg-color--light: #5E8E73;
+  --md-primary-fg-color--dark: #22392C;
+}
+
+/* Darker in light mode (reads on a near-white page), brighter in dark mode
+   (reads against the dark slate background). */
+[data-md-color-scheme="default"] {
+  --md-accent-fg-color: #3B644D;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #7FC29B;
+}
