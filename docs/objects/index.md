@@ -1,6 +1,6 @@
 # Objects
 
-Every vanilla object that gets actions from AVO. The classnames also cover everything derived from them, so variants from other mods work too. Only the variants that have the animation get its actions.
+Every classname listed below covers derived classes unless its page says otherwise; tent pack-up actions are limited to the exact classes listed.
 
 | Page | Addon | Objects |
 | --- | --- | --- |
