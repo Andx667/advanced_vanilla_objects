@@ -56,6 +56,21 @@ if (
     _lines pushBack format [LLSTRING(temperature), _temperature toFixed 1];
     _lines pushBack format [LLSTRING(humidity), round (_humidity * 100)];
     _lines pushBack format [LLSTRING(dewPoint), _dewPoint toFixed 1];
+
+    // How it feels, with the same ACE formulas as the temperature of a player. The wind chill is for
+    // cold and wind, the heat index for warm and humid air. They are left out when they do not apply.
+    private _windChill = [_temperature, _windSpeed] call ACEFUNC(weather,calculateWindChill);
+    if (_windChill < _temperature - 0.05) then {
+        _lines pushBack format [LLSTRING(windChill), _windChill toFixed 1];
+    };
+
+    if (_temperature >= 27) then {
+        private _heatIndex = [_temperature, _humidity] call ACEFUNC(weather,calculateHeatIndex);
+        if (_heatIndex > _temperature + 0.05) then {
+            _lines pushBack format [LLSTRING(heatIndex), _heatIndex toFixed 1];
+        };
+    };
+
     _lines pushBack format [LLSTRING(pressure), _pressure toFixed 1];
 };
 

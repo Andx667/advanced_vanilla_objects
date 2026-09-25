@@ -17,6 +17,10 @@
             <English>Fog: %1 %%</English>
             <German>Nebel: %1 %%</German>
         </Key>
+        <Key ID="STR_avo_weather_heatIndex">
+            <English>Heat index: %1 °C</English>
+            <German>Hitzeindex: %1 °C</German>
+        </Key>
         <Key ID="STR_avo_weather_humidity">
             <English>Humidity: %1 %%</English>
             <German>Luftfeuchtigkeit: %1 %%</German>
@@ -56,6 +60,10 @@
         <Key ID="STR_avo_weather_windCalm">
             <English>Wind: calm</English>
             <German>Wind: windstill</German>
+        </Key>
+        <Key ID="STR_avo_weather_windChill">
+            <English>Wind chill: %1 °C</English>
+            <German>Windchill: %1 °C</German>
         </Key>
         <Key ID="STR_avo_weather_windsockTitle">
             <English>Windsock</English>
