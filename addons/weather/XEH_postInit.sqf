@@ -18,4 +18,4 @@ private _readData = [
 ] call ACEFUNC(interact_menu,createAction);
 
 // Base of the white, olive and sand variants
-["Land_PortableWeatherStation_01_base_F", 0, [], _readData, true] call ACEFUNC(interact_menu,addActionToClass);
+["Land_PortableWeatherStation_01_base_F", [], _readData] call EFUNC(common,addClassActions);

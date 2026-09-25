@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="animations">
+        <Key ID="STR_avo_animations_Setting_Enabled_Description">
+            <English>Adds ACE interactions to vanilla objects that have animations but no way to change them in the game: drawers, doors, lids, lamps, panels and more.</English>
+            <German>Fügt Vanilla-Objekten mit Animationen, die sich im Spiel nicht ändern lassen, ACE-Interaktionen hinzu: Schubladen, Türen, Deckel, Lampen, Module und mehr.</German>
+        </Key>
+        <Key ID="STR_avo_animations_Setting_Enabled_DisplayName">
+            <English>Enable animation actions</English>
+            <German>Animationsaktionen aktivieren</German>
+        </Key>
+        <Key ID="STR_avo_animations_close">
+            <English>Close %1</English>
+            <German>%1 schließen</German>
+        </Key>
+        <Key ID="STR_avo_animations_extend">
+            <English>Extend %1</English>
+            <German>%1 ausfahren</German>
+        </Key>
+        <Key ID="STR_avo_animations_group_controls">
+            <English>Controls</English>
+            <German>Bedienelemente</German>
+        </Key>
+        <Key ID="STR_avo_animations_group_doors">
+            <English>Doors</English>
+            <German>Türen</German>
+        </Key>
+        <Key ID="STR_avo_animations_group_drawers">
+            <English>Drawers</English>
+            <German>Schubladen</German>
+        </Key>
+        <Key ID="STR_avo_animations_group_panels">
+            <English>Solar panels</English>
+            <German>Solarmodule</German>
+        </Key>
+        <Key ID="STR_avo_animations_lower">
+            <English>Lower %1</English>
+            <German>%1 senken</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_antenna">
+            <English>antenna</English>
+            <German>Antenne</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_computer">
+            <English>computer</English>
+            <German>Computer</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_door">
+            <English>door</English>
+            <German>Tür</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_doorN">
+            <English>door %1</English>
+            <German>Tür %1</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_drawer">
+            <English>drawer</English>
+            <German>Schublade</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_drawerN">
+            <English>drawer %1</English>
+            <German>Schublade %1</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_flag">
+            <English>flag</English>
+            <German>Flagge</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_indicatorLamp">
+            <English>indicator lamp</English>
+            <German>Kontrollleuchte</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_laptop">
+            <English>laptop</English>
+            <German>Laptop</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_leds">
+            <English>LED lights</English>
+            <German>LEDs</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_lid">
+            <English>lid</English>
+            <German>Deckel</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_panelN">
+            <English>panel %1</English>
+            <German>Modul %1</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_serverRack">
+            <English>server rack</English>
+            <German>Serverrack</German>
+        </Key>
+        <Key ID="STR_avo_animations_noun_solarPanels">
+            <English>solar panels</English>
+            <German>Solarmodule</German>
+        </Key>
+        <Key ID="STR_avo_animations_open">
+            <English>Open %1</English>
+            <German>%1 öffnen</German>
+        </Key>
+        <Key ID="STR_avo_animations_raise">
+            <English>Raise %1</English>
+            <German>%1 heben</German>
+        </Key>
+        <Key ID="STR_avo_animations_retract">
+            <English>Retract %1</English>
+            <German>%1 einfahren</German>
+        </Key>
+        <Key ID="STR_avo_animations_rotateLeft">
+            <English>Rotate %1 left</English>
+            <German>%1 nach links drehen</German>
+        </Key>
+        <Key ID="STR_avo_animations_rotateRight">
+            <English>Rotate %1 right</English>
+            <German>%1 nach rechts drehen</German>
+        </Key>
+        <Key ID="STR_avo_animations_switchPosition1">
+            <English>Set switch to position 1</English>
+            <German>Schalter auf Position 1 stellen</German>
+        </Key>
+        <Key ID="STR_avo_animations_switchPosition2">
+            <English>Set switch to position 2</English>
+            <German>Schalter auf Position 2 stellen</German>
+        </Key>
+        <Key ID="STR_avo_animations_switchPositionOff">
+            <English>Turn switch off</English>
+            <German>Schalter ausschalten</German>
+        </Key>
+        <Key ID="STR_avo_animations_tiltDown">
+            <English>Tilt %1 down</English>
+            <German>%1 nach unten neigen</German>
+        </Key>
+        <Key ID="STR_avo_animations_tiltUp">
+            <English>Tilt %1 up</English>
+            <German>%1 nach oben neigen</German>
+        </Key>
+        <Key ID="STR_avo_animations_turnOff">
+            <English>Turn off %1</English>
+            <German>%1 ausschalten</German>
+        </Key>
+        <Key ID="STR_avo_animations_turnOn">
+            <English>Turn on %1</English>
+            <German>%1 einschalten</German>
+        </Key>
+    </Package>
+</Project>

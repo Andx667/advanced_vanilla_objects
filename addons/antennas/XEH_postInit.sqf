@@ -19,7 +19,8 @@ if (_missing isNotEqualTo []) exitWith {
     WARNING_1("ACRE ground spike antenna functions not found (%1), interactions disabled",_missing);
 };
 
-private _position = {boundingCenter _target};
+// The Rugged terminals are big, the centre of the hub is out of reach. This is the point of the model closest to the player.
+private _position = {[_target] call EFUNC(common,interactionPosition)};
 
 private _connect = [
     QGVAR(connect),
@@ -102,22 +103,39 @@ private _deactivate = [
     5
 ] call ACEFUNC(interact_menu,createAction);
 
-// Bases of every Contact variant (Olive/Black/Sand, small, mounted) and the Rugged communications terminals
+// One interaction point for the terminals, with everything they can do inside. The actions can
+// be shown together (deactivate, connect, disconnect) and would overlap on the same point.
+private _terminal = [
+    QGVAR(terminal),
+    LLSTRING(terminal),
+    "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa",
+    {},
+    {
+        params ["_target", "_player"];
+        GVAR(enabled) || {[_player, _target] call ACREFUNC(sys_gsa,isAntennaConnected)}
+    },
+    {},
+    [],
+    _position,
+    5
+] call ACEFUNC(interact_menu,createAction);
+
+// Bases of the Contact variants (Olive/Black/Sand, small). The mounted dishes are out of reach.
 {
-    [_x, 0, [], _connect, true] call ACEFUNC(interact_menu,addActionToClass);
-    [_x, 0, [], _disconnect, true] call ACEFUNC(interact_menu,addActionToClass);
+    [_x, [], _connect] call EFUNC(common,addClassActions);
+    [_x, [], _disconnect] call EFUNC(common,addClassActions);
 } forEach [
     "Land_SatelliteAntenna_01_F",
-    "Land_SatelliteAntenna_01_mounted_base_F",
-    "OmniDirectionalAntenna_01_base_F",
-    "RuggedTerminal_01_communications_F",
-    "RuggedTerminal_02_communications_F",
-    "RuggedTerminal_01_communications_hub_F"
+    "OmniDirectionalAntenna_01_base_F"
 ];
 
+// The Rugged communications terminals, which have to be activated before a radio can be connected
 {
-    [_x, 0, [], _activate, true] call ACEFUNC(interact_menu,addActionToClass);
-    [_x, 0, [], _deactivate, true] call ACEFUNC(interact_menu,addActionToClass);
+    [_x, [], _terminal] call EFUNC(common,addClassActions);
+    [_x, [QGVAR(terminal)], _connect] call EFUNC(common,addClassActions);
+    [_x, [QGVAR(terminal)], _disconnect] call EFUNC(common,addClassActions);
+    [_x, [QGVAR(terminal)], _activate] call EFUNC(common,addClassActions);
+    [_x, [QGVAR(terminal)], _deactivate] call EFUNC(common,addClassActions);
 } forEach [
     "RuggedTerminal_01_communications_F",
     "RuggedTerminal_02_communications_F",

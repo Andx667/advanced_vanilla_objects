@@ -98,7 +98,7 @@ private _packUp = [
     },
     {},
     [],
-    {boundingCenter _target},
+    {[_target] call EFUNC(common,interactionPosition)},
     6
 ] call ACEFUNC(interact_menu,createAction);
 

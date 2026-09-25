@@ -25,5 +25,9 @@
             <English>Disconnect Radio</English>
             <German>Funkgerät trennen</German>
         </Key>
+        <Key ID="STR_avo_antennas_terminal">
+            <English>Terminal</English>
+            <German>Terminal</German>
+        </Key>
     </Package>
 </Project>
