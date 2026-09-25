@@ -13,4 +13,4 @@ AVO follows the standard ACE-style addon layout: functionality is split across s
 | `avo_animations` | [Animations](objects/animations.md): drawers, doors, lids, switches and more |
 | `avo_animations_solar` | Optional: [solar panel controls](objects/animations.md#solar-panels), skipped with Advanced Equipment |
 
-Every addon requires `avo_common`, and is skipped when CBA or ACE is missing. Each has its own CBA setting to turn it off.
+Feature addons depend on `avo_common` (directly or through `avo_tents`) and are skipped when CBA or ACE is missing. Only the feature addons listed in [Usage](usage.md#settings) have their own CBA setting; optional addons are additionally skipped when their specific dependency is missing.
