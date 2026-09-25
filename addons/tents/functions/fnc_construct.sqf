@@ -2,7 +2,7 @@
 /*
  * Author: Andx
  * Consumes the tent item and creates the tent at the position and orientation confirmed
- * during the 3D placement step.
+ * during the 3D placement step. Raises the avo_tents_setUp event.
  *
  * Arguments:
  * 0: Caller <OBJECT>
@@ -47,5 +47,7 @@ _tent setVariable [QGVAR(grassCutter), _grassCutter, true];
 {
     _x addCuratorEditableObjects [[_tent, _grassCutter], false];
 } forEach allCurators;
+
+[QGVAR(setUp), [_tent, _caller, _item]] call CBA_fnc_globalEvent;
 
 _caller switchMove "";

@@ -33,11 +33,12 @@ private _distance = 4;
 
 private _statement = {
     params ["_target", "_player", "_params"];
-    _params params ["_source", "_delta", "_min", "_max"];
+    _params params ["_source", "_delta", "_min", "_max", "_id"];
 
     // Instant, the time in the config is for a change of 1, a step is much more than that
     private _phase = ((_target animationSourcePhase _source) + _delta) min _max max _min;
     [QEGVAR(animations,animate), [_target, [[_source, _phase, true]]], _target] call CBA_fnc_targetEvent;
+    [QEGVAR(animations,changed), [_target, _id, [[_source, _phase]], _player]] call CBA_fnc_globalEvent;
 };
 private _condition = {
     params ["_target", "_player", "_params"];
@@ -80,7 +81,7 @@ private _group = [
         _statement,
         _condition,
         {},
-        [_source, _size, _min, _max],
+        [_source, _size, _min, _max, _id],
         _position,
         _distance
     ] call ACEFUNC(interact_menu,createAction);
@@ -92,7 +93,7 @@ private _group = [
         _statement,
         _condition,
         {},
-        [_source, -_size, _min, _max],
+        [_source, -_size, _min, _max, _id],
         _position,
         _distance
     ] call ACEFUNC(interact_menu,createAction);

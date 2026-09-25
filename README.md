@@ -178,6 +178,41 @@ Open and close the door of the variants that have one. The outer tents (`*_outer
 
 Only the variants that have the animation get its actions. Each addon can be turned off with its CBA setting.
 
+## Events
+
+Every action raises a CBA event after it was used, so missions and mods can react to it. The events are raised with `CBA_fnc_globalEvent`, so they run on every machine, use `isServer` or `hasInterface` in the handler as needed. They are not raised when the object is changed with scripts (`animateSource`, ...) or in the editor.
+
+| Event | Arguments | Raised when |
+| --- | --- | --- |
+| `avo_animations_changed` | `[object, control, changes, unit]` | An animation action is used. `control` is the id of the control (see below), `changes` are the animation sources and the phases they are set to, `[["Door_1_Hide", 1]]` |
+| `avo_antennas_activated` | `[terminal, unit]` | A Rugged terminal is activated |
+| `avo_antennas_deactivated` | `[terminal, unit]` | A Rugged terminal is deactivated |
+| `avo_antennas_connected` | `[antenna, radioId, unit]` | A radio is connected to one of the antennas or terminals (from ACRE's ground spike antenna event) |
+| `avo_antennas_disconnected` | `[antenna, unit, radioId]` | A radio is disconnected from one of them. `radioId` is `""` when ACRE does not tell it |
+| `avo_tents_setUp` | `[tent, unit, item]` | A tent is set up from a tent item |
+| `avo_tents_packedUp` | `[classname, posASL, [vectorDir, vectorUp], unit, item]` | A tent is packed up. The tent is deleted by then, its class and place are given instead |
+| `avo_weather_read` | `[object, unit, windOnly]` | Weather data is read at a weather station, or the wind at a windsock (`windOnly` is true) |
+
+The controls of `avo_animations_changed`:
+
+- Drawers: `drawer1` to `drawer6` (cabinets, office table), `drawer` (coffin)
+- Doors: `door1` to `door4` (wooden coffin, decon and connector tents), `door` (medical tent, fridge)
+- Lids and screens: `lid` (laptop, CBRN container, bucket), `screens` (multi-screen computer)
+- Portable server: `rack` (server rack), `leds` (LED lights)
+- Solar panels: `yaw`, `pitch1`, `pitch2`. The phase is the angle in degrees
+- Transfer switch: `position1`, `position0`, `position2`, `lamp`
+- `antenna` (data terminal), `flag` (flag pole)
+
+```sqf
+["avo_animations_changed", {
+    params ["_object", "_control", "_changes", "_unit"];
+
+    if (isServer && {_control == "flag"}) then {
+        systemChat format ["%1 moved the flag on %2", name _unit, typeOf _object];
+    };
+}] call CBA_fnc_addEventHandler;
+```
+
 ## Settings
 
 Each addon has an "Enable ..." checkbox under its own category ("Advanced Vanilla Objects - <Addon>") in the CBA settings, so a function you don't want can be turned off. The tents also have a build time setting. The settings are server/mission-wide.

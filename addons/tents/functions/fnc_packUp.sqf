@@ -31,9 +31,15 @@ if (!isNull _grassCutter) then {
     deleteVehicle _grassCutter;
 };
 
+private _posASL = getPosASL _tent;
+private _vectorDirAndUp = [vectorDir _tent, vectorUp _tent];
+private _classname = typeOf _tent;
+
 deleteVehicle _tent;
 
 _caller addItem _item;
+
+[QGVAR(packedUp), [_classname, _posASL, _vectorDirAndUp, _caller, _item]] call CBA_fnc_globalEvent;
 _caller switchMove "";
 
 [LLSTRING(packedUp)] call ACEFUNC(common,displayText);

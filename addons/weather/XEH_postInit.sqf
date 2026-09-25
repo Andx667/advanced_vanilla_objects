@@ -7,8 +7,9 @@ private _readData = [
     LLSTRING(readData),
     QPATHTOF(data\readData_ca.paa),
     {
-        params ["_target"];
+        params ["_target", "_player"];
         [_target] call FUNC(readData);
+        [QGVAR(read), [_target, _player, false]] call CBA_fnc_globalEvent;
     },
     {GVAR(enabled)},
     {},
@@ -26,8 +27,9 @@ private _readWind = [
     LLSTRING(readWind),
     QPATHTOF(data\readData_ca.paa),
     {
-        params ["_target"];
+        params ["_target", "_player"];
         [_target, true] call FUNC(readData);
+        [QGVAR(read), [_target, _player, true]] call CBA_fnc_globalEvent;
     },
     {GVAR(enabled)},
     {},
