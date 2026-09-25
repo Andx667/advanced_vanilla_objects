@@ -33,6 +33,10 @@ Discord: <https://discord.gg/ag4v6kxYAa>
 - __Antennas__ — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas and omni-directional antennas via the ACE interaction menu, like ACRE's ground spike antenna. The antenna sits at the real tip of the model, so height matters for signal. The link drops when the radio is more than 10 m from the antenna.
 - __Weather__ — ACE action on the portable weather station (Contact) that reads precise weather data: wind at the anemometer, temperature, humidity, dew point and pressure from ACE weather, plus overcast, rain and fog.
 
+## Settings
+
+Each addon has an "Enable ..." checkbox under its own category ("Advanced Vanilla Objects - <Addon>") in the CBA settings, so a function you don't want can be turned off. The settings are server/mission-wide.
+
 ## Contributing
 
 For new contributors, see the [Contributing Setup & Guidelines](./.github/CONTRIBUTING.md).

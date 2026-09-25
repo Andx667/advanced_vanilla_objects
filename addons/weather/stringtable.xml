@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="avo">
     <Package name="weather">
+        <Key ID="STR_avo_weather_Setting_Enabled_Description">
+            <English>Allows reading precise weather data from the portable weather station.</English>
+            <German>Erlaubt es, an der tragbaren Wetterstation genaue Wetterdaten abzulesen.</German>
+        </Key>
+        <Key ID="STR_avo_weather_Setting_Enabled_DisplayName">
+            <English>Enable weather station readout</English>
+            <German>Wetterstation-Ablesung aktivieren</German>
+        </Key>
         <Key ID="STR_avo_weather_dewPoint">
             <English>Dew point: %1 °C</English>
             <German>Taupunkt: %1 °C</German>

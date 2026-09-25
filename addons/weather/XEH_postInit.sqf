@@ -10,7 +10,7 @@ private _readData = [
         params ["_target"];
         [_target] call FUNC(readData);
     },
-    {true},
+    {GVAR(enabled)},
     {},
     [],
     {boundingCenter _target},

@@ -25,7 +25,8 @@ private _connect = [
     {},
     {
         params ["_target", "_player"];
-        !([_player, _target] call ACREFUNC(sys_gsa,isAntennaConnected))
+        GVAR(enabled)
+        && {!([_player, _target] call ACREFUNC(sys_gsa,isAntennaConnected))}
         && {[_player, _target] call ACREFUNC(sys_gsa,hasCompatibleRadios)}
     },
     {
@@ -37,6 +38,7 @@ private _connect = [
     5
 ] call ACEFUNC(interact_menu,createAction);
 
+// Not gated by the setting, so a link that exists can still be removed when it is turned off
 private _disconnect = [
     QGVAR(disconnect),
     LLSTRING(disconnect),
