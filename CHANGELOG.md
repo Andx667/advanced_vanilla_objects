@@ -16,6 +16,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 ### Added
 
 - Antennas - connect ACRE radios (PRC-117F, PRC-152) to the vanilla Contact satellite antennas and omni-directional antennas
+- Weather - ACE action on the Contact portable weather station to read precise weather data
 
 ## [0.1.0] - 2026-09-14
 

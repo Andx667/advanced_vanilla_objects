@@ -11,6 +11,9 @@
 #define ACEFUNC(component,function) TRIPLES(DOUBLES(ACE_PREFIX,component),fnc,function)
 #define QACEFUNC(component,function) QUOTE(ACEFUNC(component,function))
 
+#define ACEPATHTOF(component,path) \z\ace\addons\component\path
+#define QACEPATHTOF(component,path) QUOTE(ACEPATHTOF(component,path))
+
 // --- ACRE reference macros ---
 #define ACRE_PREFIX acre
 

@@ -6,14 +6,15 @@
 
 - [CBA_A3](https://github.com/CBATeam/CBA_A3)
 - [ACE3](https://github.com/acemod/ACE3)
-- [ACRE2](https://github.com/IDI-Systems/acre2)
 - Arma 3 Contact content
+- [ACRE2](https://github.com/IDI-Systems/acre2) (only for the antennas)
 
-If any of these is missing, the affected addon is skipped instead of throwing errors.
+If a dependency of an addon is missing, that addon is skipped instead of throwing errors.
 
 # Features
 
 - **Antennas** — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas and omni-directional antennas via the ACE interaction menu, like ACRE's ground spike antenna. The antenna sits at the real tip of the model, so height matters for signal.
+- **Weather** — ACE action on the portable weather station (Contact) that reads precise weather data: wind at the anemometer, temperature, humidity, dew point and pressure from ACE weather, plus overcast, rain and fog.
 
 # Source & Issues
 

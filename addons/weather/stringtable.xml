@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="weather">
+        <Key ID="STR_avo_weather_dewPoint">
+            <English>Dew point: %1 °C</English>
+            <German>Taupunkt: %1 °C</German>
+        </Key>
+        <Key ID="STR_avo_weather_fog">
+            <English>Fog: %1 %%</English>
+            <German>Nebel: %1 %%</German>
+        </Key>
+        <Key ID="STR_avo_weather_humidity">
+            <English>Humidity: %1 %%</English>
+            <German>Luftfeuchtigkeit: %1 %%</German>
+        </Key>
+        <Key ID="STR_avo_weather_overcast">
+            <English>Overcast: %1 %%</English>
+            <German>Bewölkung: %1 %%</German>
+        </Key>
+        <Key ID="STR_avo_weather_pressure">
+            <English>Pressure: %1 hPa</English>
+            <German>Luftdruck: %1 hPa</German>
+        </Key>
+        <Key ID="STR_avo_weather_rain">
+            <English>Rain: %1 %%</English>
+            <German>Regen: %1 %%</German>
+        </Key>
+        <Key ID="STR_avo_weather_readData">
+            <English>Read Weather Data</English>
+            <German>Wetterdaten ablesen</German>
+        </Key>
+        <Key ID="STR_avo_weather_temperature">
+            <English>Temperature: %1 °C</English>
+            <German>Temperatur: %1 °C</German>
+        </Key>
+        <Key ID="STR_avo_weather_title">
+            <English>Weather Station</English>
+            <German>Wetterstation</German>
+        </Key>
+        <Key ID="STR_avo_weather_wind">
+            <English>Wind: %1 m/s from %2° (%3)</English>
+            <German>Wind: %1 m/s aus %2° (%3)</German>
+        </Key>
+        <Key ID="STR_avo_weather_windCalm">
+            <English>Wind: calm</English>
+            <German>Wind: windstill</German>
+        </Key>
+    </Package>
+</Project>

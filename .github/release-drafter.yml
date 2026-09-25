@@ -39,7 +39,7 @@ exclude-labels:
 
 change-template: '* $TITLE (#$NUMBER) by $AUTHOR'
 template: |
-  _Requires [CBA_A3](https://github.com/CBATeam/CBA_A3), [ACE3](https://github.com/acemod/ACE3), [ACRE2](https://github.com/IDI-Systems/acre2) and Arma 3 Contact content._
+  _Requires [CBA_A3](https://github.com/CBATeam/CBA_A3), [ACE3](https://github.com/acemod/ACE3) and Arma 3 Contact content. The antennas also need [ACRE2](https://github.com/IDI-Systems/acre2)._
 
   ## Summary
 
