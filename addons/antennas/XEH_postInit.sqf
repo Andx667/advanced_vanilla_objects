@@ -1,5 +1,8 @@
 #include "script_component.hpp"
 
+// The animation has to run where the object is local, which can be the server
+[QGVAR(setActive), FUNC(setActive)] call CBA_fnc_addEventHandler;
+
 if (!hasInterface) exitWith {};
 
 // We reuse ACRE's ground spike antenna (sys_gsa) connect/disconnect logic. Those
@@ -58,6 +61,47 @@ private _disconnect = [
     5
 ] call ACEFUNC(interact_menu,createAction);
 
+// The Rugged communications terminals have to be activated before a radio can be connected
+private _activate = [
+    QGVAR(activate),
+    LLSTRING(activate),
+    "\a3\ui_f\data\IGUI\Cfg\Actions\ico_ON_ca.paa",
+    {
+        params ["_target"];
+        [QGVAR(setActive), [_target, true], _target] call CBA_fnc_targetEvent;
+    },
+    {
+        params ["_target"];
+        GVAR(enabled) && {!([_target] call FUNC(isActive))}
+    },
+    {},
+    [],
+    _position,
+    5
+] call ACEFUNC(interact_menu,createAction);
+
+// A radio still connected when the terminal is deactivated is disconnected first
+private _deactivate = [
+    QGVAR(deactivate),
+    LLSTRING(deactivate),
+    "\a3\ui_f\data\IGUI\Cfg\Actions\ico_OFF_ca.paa",
+    {
+        params ["_target", "_player"];
+        if ([_player, _target] call ACREFUNC(sys_gsa,isAntennaConnected)) then {
+            [_player, _target] call ACREFUNC(sys_gsa,disconnect);
+        };
+        [QGVAR(setActive), [_target, false], _target] call CBA_fnc_targetEvent;
+    },
+    {
+        params ["_target"];
+        GVAR(enabled) && {[_target] call FUNC(isActive)}
+    },
+    {},
+    [],
+    _position,
+    5
+] call ACEFUNC(interact_menu,createAction);
+
 // Bases of every Contact variant (Olive/Black/Sand, small, mounted) and the Rugged communications terminals
 {
     [_x, 0, [], _connect, true] call ACEFUNC(interact_menu,addActionToClass);
@@ -66,6 +110,15 @@ private _disconnect = [
     "Land_SatelliteAntenna_01_F",
     "Land_SatelliteAntenna_01_mounted_base_F",
     "OmniDirectionalAntenna_01_base_F",
+    "RuggedTerminal_01_communications_F",
+    "RuggedTerminal_02_communications_F",
+    "RuggedTerminal_01_communications_hub_F"
+];
+
+{
+    [_x, 0, [], _activate, true] call ACEFUNC(interact_menu,addActionToClass);
+    [_x, 0, [], _deactivate, true] call ACEFUNC(interact_menu,addActionToClass);
+} forEach [
     "RuggedTerminal_01_communications_F",
     "RuggedTerminal_02_communications_F",
     "RuggedTerminal_01_communications_hub_F"

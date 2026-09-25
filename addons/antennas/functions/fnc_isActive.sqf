@@ -2,9 +2,9 @@
 /*
  * Author: Andx
  * Checks if an antenna object is active. Most are always active. Objects that have to be
- * switched on first (Rugged communications terminals, "Open terminal" in the editor) name
- * the animation source that marks this in the `avo_antennas_activeSource` config property;
- * they are active while that source is above 0.
+ * switched on first (Rugged communications terminals, "Open terminal" in the editor) list
+ * their animation sources in the `avo_antennas_activeSources` config property; they are
+ * active while the first one is above 0.
  *
  * Arguments:
  * 0: Antenna object <OBJECT>
@@ -20,6 +20,6 @@
 
 params ["_object"];
 
-private _source = getText (configOf _object >> QGVAR(activeSource));
+private _sources = getArray (configOf _object >> QGVAR(activeSources));
 
-_source isEqualTo "" || {(_object animationSourcePhase _source) > 0}
+_sources isEqualTo [] || {(_object animationSourcePhase (_sources select 0)) > 0}

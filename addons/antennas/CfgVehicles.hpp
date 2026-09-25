@@ -4,8 +4,9 @@
 // class itself, that is where ACRE's findAntenna reads it.
 //
 // The Rugged communications terminals only work once activated. The "Open terminal"
-// editor attribute does that by raising the Terminal_source animation source, so
-// GVAR(activeSource) names the source that has to be above 0 (see fnc_isActive.sqf).
+// editor attribute does that by raising the Terminal_source animation source (and its
+// sound sources). GVAR(activeSources) lists them: the first one marks the state and has to
+// be above 0 (see fnc_isActive.sqf), all of them are animated by fnc_setActive.sqf.
 class CfgVehicles {
     class Items_base_F;
     class NonStrategic;
@@ -33,21 +34,21 @@ class CfgVehicles {
 
     class RuggedTerminal_01_communications_F: RuggedTerminal_Base_F {
         acre_antennaPosFnc = QFUNC(antennaPos);
-        GVAR(activeSource) = "Terminal_source";
+        GVAR(activeSources)[] = {"Terminal_source", "Terminal_source_sound"};
         class AcreComponents {
             componentName = QGVAR(satDish);
         };
     };
     class RuggedTerminal_02_communications_F: RuggedTerminal_Base_F {
         acre_antennaPosFnc = QFUNC(antennaPos);
-        GVAR(activeSource) = "Terminal_source";
+        GVAR(activeSources)[] = {"Terminal_source", "Terminal_source_sound"};
         class AcreComponents {
             componentName = QGVAR(satDish);
         };
     };
     class RuggedTerminal_01_communications_hub_F: RuggedTerminal_Base_F {
         acre_antennaPosFnc = QFUNC(antennaPos);
-        GVAR(activeSource) = "Terminal_source";
+        GVAR(activeSources)[] = {"Terminal_source", "Terminal_source_sound", "Terminal_source_sound_case_01", "Terminal_source_sound_case_02"};
         class AcreComponents {
             componentName = QGVAR(satDish);
         };

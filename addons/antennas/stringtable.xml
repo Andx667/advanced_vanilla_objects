@@ -9,9 +9,17 @@
             <English>Enable antenna connections</English>
             <German>Antennenverbindungen aktivieren</German>
         </Key>
+        <Key ID="STR_avo_antennas_activate">
+            <English>Activate Terminal</English>
+            <German>Terminal aktivieren</German>
+        </Key>
         <Key ID="STR_avo_antennas_connect">
             <English>Connect Radio</English>
             <German>Funkgerät verbinden</German>
+        </Key>
+        <Key ID="STR_avo_antennas_deactivate">
+            <English>Deactivate Terminal</English>
+            <German>Terminal deaktivieren</German>
         </Key>
         <Key ID="STR_avo_antennas_disconnect">
             <English>Disconnect Radio</English>
