@@ -7,22 +7,22 @@ class CfgVehicles {
     class NonStrategic;
 
     class Land_SatelliteAntenna_01_F: Items_base_F {
-        acre_antennaPosFnc = "avo_antennas_fnc_antennaPos";
+        acre_antennaPosFnc = QFUNC(antennaPos);
         class AcreComponents {
-            componentName = "avo_antennas_satDish";
+            componentName = QGVAR(satDish);
         };
     };
     class Land_SatelliteAntenna_01_mounted_base_F: NonStrategic {
-        acre_antennaPosFnc = "avo_antennas_fnc_antennaPos";
+        acre_antennaPosFnc = QFUNC(antennaPos);
         class AcreComponents {
-            componentName = "avo_antennas_satDish";
+            componentName = QGVAR(satDish);
         };
     };
 
     class OmniDirectionalAntenna_01_base_F: Items_base_F {
-        acre_antennaPosFnc = "avo_antennas_fnc_antennaPos";
+        acre_antennaPosFnc = QFUNC(antennaPos);
         class AcreComponents {
-            componentName = "avo_antennas_omni";
+            componentName = QGVAR(omni);
         };
     };
 };

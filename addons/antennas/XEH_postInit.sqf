@@ -1,63 +1,64 @@
+#include "script_component.hpp"
+
 if (!hasInterface) exitWith {};
 
 // We reuse ACRE's ground spike antenna (sys_gsa) connect/disconnect logic. Those
 // functions are not public API, so bail out with a log line rather than throwing
 // errors from the interaction menu if ACRE ever renames them.
 private _acreFunctions = [
-    "acre_sys_gsa_fnc_connectChildrenActions",
-    "acre_sys_gsa_fnc_disconnect",
-    "acre_sys_gsa_fnc_isAntennaConnected",
-    "acre_sys_gsa_fnc_hasCompatibleRadios"
+    QACREFUNC(sys_gsa,connectChildrenActions),
+    QACREFUNC(sys_gsa,disconnect),
+    QACREFUNC(sys_gsa,isAntennaConnected),
+    QACREFUNC(sys_gsa,hasCompatibleRadios)
 ];
 private _missing = _acreFunctions select {isNil _x};
 if (_missing isNotEqualTo []) exitWith {
-    diag_log format ["[AVO] Antennas: ACRE ground spike antenna functions not found (%1), interactions disabled", _missing];
+    WARNING_1("ACRE ground spike antenna functions not found (%1), interactions disabled",_missing);
 };
 
-private _icons = "\idi\acre\addons\ace_interact\data\icons\";
 private _position = {boundingCenter _target};
 
 private _connect = [
-    "avo_antennas_connect",
-    localize "STR_avo_antennas_connect",
-    _icons + "connect.paa",
+    QGVAR(connect),
+    LLSTRING(connect),
+    QACREPATHTOF(ace_interact,data\icons\connect.paa),
     {},
     {
         params ["_target", "_player"];
-        !([_player, _target] call acre_sys_gsa_fnc_isAntennaConnected)
-        && {[_player, _target] call acre_sys_gsa_fnc_hasCompatibleRadios}
+        !([_player, _target] call ACREFUNC(sys_gsa,isAntennaConnected))
+        && {[_player, _target] call ACREFUNC(sys_gsa,hasCompatibleRadios)}
     },
     {
         params ["_target", "_player"];
-        [_player, _target] call acre_sys_gsa_fnc_connectChildrenActions
+        [_player, _target] call ACREFUNC(sys_gsa,connectChildrenActions)
     },
     [],
     _position,
     5
-] call ace_interact_menu_fnc_createAction;
+] call ACEFUNC(interact_menu,createAction);
 
 private _disconnect = [
-    "avo_antennas_disconnect",
-    localize "STR_avo_antennas_disconnect",
-    _icons + "disconnect.paa",
+    QGVAR(disconnect),
+    LLSTRING(disconnect),
+    QACREPATHTOF(ace_interact,data\icons\disconnect.paa),
     {
         params ["_target", "_player"];
-        [_player, _target] call acre_sys_gsa_fnc_disconnect;
+        [_player, _target] call ACREFUNC(sys_gsa,disconnect);
     },
     {
         params ["_target", "_player"];
-        [_player, _target] call acre_sys_gsa_fnc_isAntennaConnected
+        [_player, _target] call ACREFUNC(sys_gsa,isAntennaConnected)
     },
     {},
     [],
     _position,
     5
-] call ace_interact_menu_fnc_createAction;
+] call ACEFUNC(interact_menu,createAction);
 
 // Bases of every Contact variant (Olive/Black/Sand, small, mounted)
 {
-    [_x, 0, [], _connect, true] call ace_interact_menu_fnc_addActionToClass;
-    [_x, 0, [], _disconnect, true] call ace_interact_menu_fnc_addActionToClass;
+    [_x, 0, [], _connect, true] call ACEFUNC(interact_menu,addActionToClass);
+    [_x, 0, [], _disconnect, true] call ACEFUNC(interact_menu,addActionToClass);
 } forEach [
     "Land_SatelliteAntenna_01_F",
     "Land_SatelliteAntenna_01_mounted_base_F",

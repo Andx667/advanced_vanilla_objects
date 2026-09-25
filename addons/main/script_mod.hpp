@@ -10,13 +10,6 @@
 #define VERSION MAJOR.MINOR
 #define VERSION_STR MAJOR.MINOR.PATCH
 #define VERSION_AR MAJOR,MINOR,PATCH
-#define VERSION_CONFIG version = VERSION; versionStr = QUOTE(VERSION_STR); versionAr[] = {VERSION_AR}
-
-// --- Minimal macro set (no CBA dependency; swap in CBA's
-// script_macros_common.hpp instead if/when this mod depends on CBA_A3) ---
-#define QUOTE(var1) #var1
-#define DOUBLES(var1,var2) var1##_##var2
-#define ADDON DOUBLES(PREFIX,COMPONENT)
 
 #ifndef COMPONENT_BEAUTIFIED
     #define COMPONENT_BEAUTIFIED COMPONENT

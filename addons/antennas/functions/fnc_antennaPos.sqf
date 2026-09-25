@@ -1,3 +1,4 @@
+#include "..\script_component.hpp"
 /*
  * Author: Andx
  * Position of the antenna tip for ACRE (`acre_antennaPosFnc`). Uses the top
