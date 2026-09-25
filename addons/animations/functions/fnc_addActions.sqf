@@ -70,9 +70,10 @@ private _toggle = {
 
     private _statement = {
         params ["_target", "_player", "_params"];
-        _params params ["_sources", "_names", "_index", "_instant"];
+        _params params ["_sources", "_names", "_index", "_instant", "_id"];
 
         [QGVAR(animate), [_target, _sources apply {[_x select 0, _x select _index, _instant]}], _target] call CBA_fnc_targetEvent;
+        [QGVAR(changed), [_target, _id, _sources apply {[_x select 0, _x select _index]}, _player]] call CBA_fnc_globalEvent;
     };
     // Index 2 changes to B and is shown in A, index 1 changes to A and is shown in B
     private _condition = {
@@ -86,8 +87,8 @@ private _toggle = {
 
     [
         [
-            [format ["%1_%2_b", QGVAR(toggle), _id], format [_labelB, _noun], _iconB, _statement, _condition, {}, [_sources, _names, 2, _instant], _actionPosition, _distance] call ACEFUNC(interact_menu,createAction),
-            [format ["%1_%2_a", QGVAR(toggle), _id], format [_labelA, _noun], _iconA, _statement, _condition, {}, [_sources, _names, 1, _instant], _actionPosition, _distance] call ACEFUNC(interact_menu,createAction)
+            [format ["%1_%2_b", QGVAR(toggle), _id], format [_labelB, _noun], _iconB, _statement, _condition, {}, [_sources, _names, 2, _instant, _id], _actionPosition, _distance] call ACEFUNC(interact_menu,createAction),
+            [format ["%1_%2_a", QGVAR(toggle), _id], format [_labelA, _noun], _iconA, _statement, _condition, {}, [_sources, _names, 1, _instant, _id], _actionPosition, _distance] call ACEFUNC(interact_menu,createAction)
         ],
         _names
     ]
@@ -99,9 +100,10 @@ private _set = {
 
     private _statement = {
         params ["_target", "_player", "_params"];
-        _params params ["_source", "_value"];
+        _params params ["_source", "_value", "_id"];
 
         [QGVAR(animate), [_target, [[_source, _value]]], _target] call CBA_fnc_targetEvent;
+        [QGVAR(changed), [_target, _id, [[_source, _value]], _player]] call CBA_fnc_globalEvent;
     };
     private _condition = {
         params ["_target", "_player", "_params"];
@@ -114,7 +116,7 @@ private _set = {
 
     [
         [
-            [format ["%1_%2", QGVAR(set), _id], _label, _iconOn, _statement, _condition, {}, [_source, _value], _position, _distance] call ACEFUNC(interact_menu,createAction)
+            [format ["%1_%2", QGVAR(set), _id], _label, _iconOn, _statement, _condition, {}, [_source, _value, _id], _position, _distance] call ACEFUNC(interact_menu,createAction)
         ],
         [_source]
     ]

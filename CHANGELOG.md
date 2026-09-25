@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- CBA events for all actions (`avo_animations_changed`, `avo_antennas_activated`, `avo_antennas_deactivated`, `avo_antennas_connected`, `avo_antennas_disconnected`, `avo_tents_setUp`, `avo_tents_packedUp`, `avo_weather_read`), so missions and mods can hook into them
+
 ## [1.0.0] - 2026-09-25
 
 ### Added

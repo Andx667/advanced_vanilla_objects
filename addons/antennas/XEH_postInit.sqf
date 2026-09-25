@@ -3,6 +3,24 @@
 // The animation has to run where the object is local, which can be the server
 [QGVAR(setActive), FUNC(setActive)] call CBA_fnc_addEventHandler;
 
+// ACRE raises events on the server when a ground spike antenna is connected or disconnected. They are
+// raised again for our antennas as avo_antennas_connected and avo_antennas_disconnected.
+[QACREGVAR(sys_gsa,connectGsa), {
+    params ["_antenna", "_radioId", "_unit"];
+
+    if (getText (configOf _antenna >> "AcreComponents" >> "componentName") in [QGVAR(satDish), QGVAR(omni)]) then {
+        [QGVAR(connected), [_antenna, _radioId, _unit]] call CBA_fnc_globalEvent;
+    };
+}] call CBA_fnc_addEventHandler;
+
+[QACREGVAR(sys_gsa,disconnectGsa), {
+    params ["_antenna", "_unit", ["_radioId", ""]];
+
+    if (getText (configOf _antenna >> "AcreComponents" >> "componentName") in [QGVAR(satDish), QGVAR(omni)]) then {
+        [QGVAR(disconnected), [_antenna, _unit, _radioId]] call CBA_fnc_globalEvent;
+    };
+}] call CBA_fnc_addEventHandler;
+
 if (!hasInterface) exitWith {};
 
 // We reuse ACRE's ground spike antenna (sys_gsa) connect/disconnect logic. Those
@@ -68,8 +86,9 @@ private _activate = [
     LLSTRING(activate),
     "\a3\ui_f\data\IGUI\Cfg\Actions\ico_ON_ca.paa",
     {
-        params ["_target"];
+        params ["_target", "_player"];
         [QGVAR(setActive), [_target, true], _target] call CBA_fnc_targetEvent;
+        [QGVAR(activated), [_target, _player]] call CBA_fnc_globalEvent;
     },
     {
         params ["_target"];
@@ -92,6 +111,7 @@ private _deactivate = [
             [_player, _target] call ACREFUNC(sys_gsa,disconnect);
         };
         [QGVAR(setActive), [_target, false], _target] call CBA_fnc_targetEvent;
+        [QGVAR(deactivated), [_target, _player]] call CBA_fnc_globalEvent;
     },
     {
         params ["_target"];
