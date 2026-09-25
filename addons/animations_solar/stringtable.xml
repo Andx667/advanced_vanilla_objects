@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="animations_solar">
+        <Key ID="STR_avo_animations_solar_Setting_Enabled_Description">
+            <English>Adds ACE interactions to rotate and tilt the Rugged solar panels, which could only be done in the editor.</English>
+            <German>Fügt ACE-Interaktionen hinzu, um die robusten Solarmodule zu drehen und zu neigen, was sonst nur im Editor möglich war.</German>
+        </Key>
+        <Key ID="STR_avo_animations_solar_Setting_Enabled_DisplayName">
+            <English>Enable solar panel controls</English>
+            <German>Solarmodul-Steuerung aktivieren</German>
+        </Key>
+        <Key ID="STR_avo_animations_solar_group_panels">
+            <English>Solar panels</English>
+            <German>Solarmodule</German>
+        </Key>
+        <Key ID="STR_avo_animations_solar_noun_panelN">
+            <English>panel %1</English>
+            <German>Modul %1</German>
+        </Key>
+        <Key ID="STR_avo_animations_solar_noun_solarPanels">
+            <English>solar panels</English>
+            <German>Solarmodule</German>
+        </Key>
+        <Key ID="STR_avo_animations_solar_rotateLeft">
+            <English>Rotate %1 left</English>
+            <German>%1 nach links drehen</German>
+        </Key>
+        <Key ID="STR_avo_animations_solar_rotateRight">
+            <English>Rotate %1 right</English>
+            <German>%1 nach rechts drehen</German>
+        </Key>
+        <Key ID="STR_avo_animations_solar_tiltDown">
+            <English>Tilt %1 down</English>
+            <German>%1 nach unten neigen</German>
+        </Key>
+        <Key ID="STR_avo_animations_solar_tiltUp">
+            <English>Tilt %1 up</English>
+            <German>%1 nach oben neigen</German>
+        </Key>
+    </Package>
+</Project>

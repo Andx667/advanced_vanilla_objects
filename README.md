@@ -33,7 +33,7 @@ Discord: <https://discord.gg/ag4v6kxYAa>
 - __Antennas__ — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas, omni-directional antennas and Rugged communications terminals (which must be activated first, with an ACE action or "Open terminal" in the editor) via the ACE interaction menu, like ACRE's ground spike antenna. The antenna sits at the real tip of the model, so height matters for signal. The link drops when the radio is more than 10 m from the antenna.
 - __Weather__ — ACE action on the portable weather station (Contact) that reads precise weather data: wind at the anemometer, temperature, humidity, dew point and pressure from ACE weather, plus overcast, rain and fog.
 - __Tents__ — packed tent items (solar tents in four colours, dome tent, A-frame tent, and the BWA3 small tent with BWA3 loaded) that are set up with ACE's 3D placement (mouse wheel rotates, left click confirms, right click cancels). Placed tents of these classes get a "Pack Up Tent" action that gives the item back. Set the `avo_tents_canPackUp` variable of a tent to false to prevent packing it up.
-- __Animations__ — ACE actions for vanilla objects that have animations but no way to change them in the game (most only had editor attributes): drawers of the portable cabinets, office table and coffins, doors of the fridge, coffins and the decon, connector and medical tents, lids of laptops, computers and containers, transfer switch, portable server, solar panels, data terminal antenna and flag pole. Actions only show for variants that have the animation.
+- __Animations__ — ACE actions for vanilla objects that have animations but no way to change them in the game (most only had editor attributes): drawers of the portable cabinets, office table and coffins, doors of the fridge, coffins and the decon, connector and medical tents, lids of laptops, computers and containers, transfer switch, portable server, data terminal antenna and flag pole. Actions only show for variants that have the animation. Solar panels (rotate and tilt) are a separate addon that is skipped when Advanced Equipment is loaded.
 
 ## Affected objects
 
@@ -115,7 +115,7 @@ Sub menu "Controls": extend and retract the server rack, turn the LED lights on 
 
 #### Solar panels
 
-Sub menu "Solar panels": rotate the panels and tilt both panels in steps.
+Sub menu "Solar panels": rotate the panels and tilt both panels in steps. These are in their own addon, "Animations (Solar)", which is skipped when [Advanced Equipment](https://github.com/y0014984/Advanced-Equipment) or any other addon whose name starts with `AE` is loaded, because it has its own controls for them (needs Arma 3 2.22, older versions load it anyway).
 
 `Land_SolarPanel_04_black_F`, `Land_SolarPanel_04_olive_F`, `Land_SolarPanel_04_sand_F`
 

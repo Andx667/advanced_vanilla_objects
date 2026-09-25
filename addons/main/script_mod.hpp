@@ -3,7 +3,7 @@
 #define MOD_NAME Advanced Vanilla Objects
 #define AUTHOR "Andx"
 
-#define REQUIRED_VERSION 2.18
+#define REQUIRED_VERSION 2.22
 
 #include "script_version.hpp"
 

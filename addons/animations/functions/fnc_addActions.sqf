@@ -38,9 +38,6 @@ private _extend = [LLSTRING(extend), LLSTRING(retract), _iconOn, _iconOff];
 private _raise = [LLSTRING(raise), LLSTRING(lower), _iconUp, _iconDown];
 private _turnOn = [LLSTRING(turnOn), LLSTRING(turnOff), _iconOn, _iconOff];
 private _turnOff = [LLSTRING(turnOff), LLSTRING(turnOn), _iconOff, _iconOn];
-// Wordings of a step in the positive and the negative direction
-private _rotate = [LLSTRING(rotateRight), LLSTRING(rotateLeft), _iconUp, _iconDown];
-private _tilt = [LLSTRING(tiltUp), LLSTRING(tiltDown), _iconUp, _iconDown];
 
 // Numbers from the first to the last one
 private _range = {
@@ -113,40 +110,6 @@ private _set = {
     [
         [
             [format ["%1_%2", QGVAR(set), _id], _label, _iconOn, _statement, _condition, {}, [_source, _value], _position, _distance] call ACEFUNC(interact_menu,createAction)
-        ],
-        [_source]
-    ]
-};
-
-// Turns a source by a step in either direction, until it reaches its limits (in the unit of the source)
-private _step = {
-    params ["_id", "_noun", "_verbs", "_source", "_size", "_min", "_max"];
-    _verbs params ["_labelPlus", "_labelMinus", "_iconPlus", "_iconMinus"];
-
-    private _statement = {
-        params ["_target", "_player", "_params"];
-        _params params ["_source", "_delta", "_min", "_max"];
-
-        // Instant, the time in the config is for a change of 1, a step is much more than that
-        private _phase = ((_target animationSourcePhase _source) + _delta) min _max max _min;
-        [QGVAR(animate), [_target, [[_source, _phase, true]]], _target] call CBA_fnc_targetEvent;
-    };
-    private _condition = {
-        params ["_target", "_player", "_params"];
-        _params params ["_source", "_delta", "_min", "_max"];
-
-        GVAR(enabled)
-        && {[_target, [_source]] call FUNC(hasSources)}
-        && {
-            private _phase = _target animationSourcePhase _source;
-            if (_delta > 0) then {_phase < _max - 0.01} else {_phase > _min + 0.01}
-        }
-    };
-
-    [
-        [
-            [format ["%1_%2_plus", QGVAR(step), _id], format [_labelPlus, _noun], _iconPlus, _statement, _condition, {}, [_source, _size, _min, _max], _position, _distance] call ACEFUNC(interact_menu,createAction),
-            [format ["%1_%2_minus", QGVAR(step), _id], format [_labelMinus, _noun], _iconMinus, _statement, _condition, {}, [_source, -_size, _min, _max], _position, _distance] call ACEFUNC(interact_menu,createAction)
         ],
         [_source]
     ]
@@ -242,13 +205,6 @@ private _drawers = {
     ["rack", LLSTRING(noun_serverRack), _extend, [["Server_Move_Source", 0, 1]]] call _toggle,
     ["leds", LLSTRING(noun_leds), _turnOff, [["Lights_Off_Source", 0, 1]]] call _toggle
 ], ["Land_PortableServer_01_cover_base_F"]] call _register;
-
-// Contact portable solar panels
-[["Land_SolarPanel_04_base_F"], ["panels", LLSTRING(group_panels)], [
-    ["yaw", LLSTRING(noun_solarPanels), _rotate, "Panels_Yaw", 30, -180, 180] call _step,
-    ["pitch1", format [LLSTRING(noun_panelN), 1], _tilt, "Panel_1_Pitch", 15, -45, 45] call _step,
-    ["pitch2", format [LLSTRING(noun_panelN), 2], _tilt, "Panel_2_Pitch", 15, -45, 45] call _step
-]] call _register;
 
 // Coffins
 [["Coffin_01_animated_base_F"], _groupDoors, [

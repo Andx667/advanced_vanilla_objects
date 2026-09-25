@@ -29,10 +29,6 @@
             <English>Drawers</English>
             <German>Schubladen</German>
         </Key>
-        <Key ID="STR_avo_animations_group_panels">
-            <English>Solar panels</English>
-            <German>Solarmodule</German>
-        </Key>
         <Key ID="STR_avo_animations_lower">
             <English>Lower %1</English>
             <German>%1 senken</German>
@@ -81,17 +77,9 @@
             <English>lid</English>
             <German>Deckel</German>
         </Key>
-        <Key ID="STR_avo_animations_noun_panelN">
-            <English>panel %1</English>
-            <German>Modul %1</German>
-        </Key>
         <Key ID="STR_avo_animations_noun_serverRack">
             <English>server rack</English>
             <German>Serverrack</German>
-        </Key>
-        <Key ID="STR_avo_animations_noun_solarPanels">
-            <English>solar panels</English>
-            <German>Solarmodule</German>
         </Key>
         <Key ID="STR_avo_animations_open">
             <English>Open %1</English>
@@ -105,14 +93,6 @@
             <English>Retract %1</English>
             <German>%1 einfahren</German>
         </Key>
-        <Key ID="STR_avo_animations_rotateLeft">
-            <English>Rotate %1 left</English>
-            <German>%1 nach links drehen</German>
-        </Key>
-        <Key ID="STR_avo_animations_rotateRight">
-            <English>Rotate %1 right</English>
-            <German>%1 nach rechts drehen</German>
-        </Key>
         <Key ID="STR_avo_animations_switchPosition1">
             <English>Set switch to position 1</English>
             <German>Schalter auf Position 1 stellen</German>
@@ -124,14 +104,6 @@
         <Key ID="STR_avo_animations_switchPositionOff">
             <English>Turn switch off</English>
             <German>Schalter ausschalten</German>
-        </Key>
-        <Key ID="STR_avo_animations_tiltDown">
-            <English>Tilt %1 down</English>
-            <German>%1 nach unten neigen</German>
-        </Key>
-        <Key ID="STR_avo_animations_tiltUp">
-            <English>Tilt %1 up</English>
-            <German>%1 nach oben neigen</German>
         </Key>
         <Key ID="STR_avo_animations_turnOff">
             <English>Turn off %1</English>
