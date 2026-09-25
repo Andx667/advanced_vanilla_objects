@@ -15,6 +15,7 @@ The project is entirely open-source and any contributions are welcome — see [C
 - **[Weather](objects/weather.md)** — read precise weather data at the portable weather station, and the wind at the windsock
 - **[Tents](objects/tents.md)** — packed tent items that are set up with ACE's 3D placement, and a pack up action on the placed tents
 - **[Animations](objects/animations.md)** — ACE actions for drawers, doors, lids, switches and more that could only be changed in the editor
+- Matches nicely with the survival framework [Misery](compatibility.md#misery): camp in the tents and read the weather that your character feels
 - Every action raises a [CBA event](scripting.md#events) that missions and mods can hook into
 - Each addon can be turned off with its own [CBA setting](usage.md#settings)
 

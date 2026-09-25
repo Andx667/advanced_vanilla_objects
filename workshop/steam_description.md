@@ -19,6 +19,13 @@ If a dependency of an addon is missing, that addon is skipped instead of throwin
 - **Tents** — packed tent items (solar tents in four colours, dome tent, A-frame tent, and the BWA3 small tent with BWA3 loaded) that are set up with ACE's 3D placement. Placed tents of these classes can be packed up again with an ACE action.
 - **Animations** — ACE actions for vanilla objects that have animations but no way to change them in the game (most only had editor attributes): drawers of the portable cabinets, office table and coffins, doors of the fridge, coffins and the decon, connector and medical tents, lids of laptops, computers and containers, transfer switch, portable server, data terminal antenna and flag pole. Actions only show for variants that have the animation. Solar panels (rotate and tilt) are a separate addon that is skipped when Advanced Equipment is loaded.
 
+# Works well with Misery
+
+AVO matches nicely with the survival framework [Misery](https://github.com/TenuredCLOUD/Misery), they work together without any setup:
+
+- **Camping** — sleep in the tents you set up with AVO (the solar tents, dome tent and A-frame tent are beds for Misery) and pack them up in the morning
+- **Weather** — the weather station shows the wind chill and heat index with the same ACE formulas Misery uses for the temperature of your character
+
 # Source & Issues
 
 Fully open-source. Bug reports, feature requests, and contributions are all welcome.

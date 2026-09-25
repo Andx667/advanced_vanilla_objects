@@ -81,6 +81,7 @@ nav:
       - Tents: objects/tents.md
       - Animations: objects/animations.md
   - Scripting & API: scripting.md
+  - Compatibility: compatibility.md
   - Components: components.md
   - Contributing: contributing.md
   - License: license.md

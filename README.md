@@ -35,6 +35,10 @@ Discord: <https://discord.gg/ag4v6kxYAa>
 - __Tents__ — packed tent items (solar tents in four colours, dome tent, A-frame tent, and the BWA3 small tent with BWA3 loaded) that are set up with ACE's 3D placement (mouse wheel rotates, left click confirms, right click cancels). Placed tents of these classes get a "Pack Up Tent" action that gives the item back. Set the `avo_tents_canPackUp` variable of a tent to false to prevent packing it up.
 - __Animations__ — ACE actions for vanilla objects that have animations but no way to change them in the game (most only had editor attributes): drawers of the portable cabinets, office table and coffins, doors of the fridge, coffins and the decon, connector and medical tents, lids of laptops, computers and containers, transfer switch, portable server, data terminal antenna and flag pole. Actions only show for variants that have the animation. Solar panels (rotate and tilt) are a separate addon that is skipped when Advanced Equipment is loaded.
 
+## Works well with Misery
+
+AVO matches nicely with the survival framework [Misery](https://github.com/TenuredCLOUD/Misery), they work together without any setup: sleep in the tents you set up with AVO and pack them up in the morning, and read the same wind chill and heat index at the weather station that Misery uses for the temperature of your character. See [Compatibility](https://andx667.github.io/advanced_vanilla_objects/compatibility/) in the docs.
+
 ## Documentation
 
 The full documentation is at <https://andx667.github.io/advanced_vanilla_objects/>:
