@@ -19,11 +19,9 @@
     <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_vanilla_objects/validate.yml?style=flat-square&label=Validate" alt="Validate">
 </p>
 
-__Requires__ [CBA_A3](https://github.com/CBATeam/CBA_A3).
-<!-- TEMPLATE: if this mod has no hard dependency, replace the line above with something like: -->
-<!-- __No hard dependencies__ — built on Arma 3's own <X> module. -->
+__Requires__ [CBA_A3](https://github.com/CBATeam/CBA_A3), [ACE3](https://github.com/acemod/ACE3) and [ACRE2](https://github.com/IDI-Systems/acre2), plus Arma 3 Contact content. If any of these is missing, the affected addon is skipped instead of throwing errors (`skipWhenMissingDependencies`).
 
-__Advanced Vanilla Objects__ (AVO) one-sentence description of what the mod does.
+__Advanced Vanilla Objects__ (AVO) fills vanilla objects with the functions they should have had. Currently: connect ACRE radios to the vanilla Contact satellite dishes and omni-directional antennas.
 
 The project is entirely __open-source__ and any contributions are welcome.
 
@@ -32,8 +30,7 @@ Discord: <https://discord.gg/ag4v6kxYAa>
 
 ## Features
 
-- Feature one
-- Feature two
+- __Antennas__ — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas and omni-directional antennas via the ACE interaction menu, like ACRE's ground spike antenna. The antenna sits at the real tip of the model, so height matters for signal. The link drops when the radio is more than 10 m from the antenna.
 
 ## Contributing
 

@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Antennas - connect ACRE radios (PRC-117F, PRC-152) to the vanilla Contact satellite antennas and omni-directional antennas
+
 ## [0.1.0] - 2026-09-14
 
 ### Added

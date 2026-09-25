@@ -1,14 +1,19 @@
 # Advanced Vanilla Objects
 
-**Advanced Vanilla Objects** (AVO) one-sentence description of what the mod does.
+**Advanced Vanilla Objects** (AVO) fills vanilla objects with the functions they should have had. Currently: connect ACRE radios to the vanilla Contact satellite dishes and omni-directional antennas.
 
 # Requirements
 
 - [CBA_A3](https://github.com/CBATeam/CBA_A3)
+- [ACE3](https://github.com/acemod/ACE3)
+- [ACRE2](https://github.com/IDI-Systems/acre2)
+- Arma 3 Contact content
+
+If any of these is missing, the affected addon is skipped instead of throwing errors.
 
 # Features
 
-- **Feature name** — short description
+- **Antennas** — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas and omni-directional antennas via the ACE interaction menu, like ACRE's ground spike antenna. The antenna sits at the real tip of the model, so height matters for signal.
 
 # Source & Issues
 

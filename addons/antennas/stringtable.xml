@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="antennas">
+        <Key ID="STR_avo_antennas_connect">
+            <English>Connect Radio</English>
+            <German>Funkgerät verbinden</German>
+        </Key>
+        <Key ID="STR_avo_antennas_disconnect">
+            <English>Disconnect Radio</English>
+            <German>Funkgerät trennen</German>
+        </Key>
+    </Package>
+</Project>
