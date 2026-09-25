@@ -1,0 +1,86 @@
+site_name: Advanced Vanilla Objects
+site_description: An Arma 3 mod that fills vanilla objects with the functions they should have had.
+site_url: https://andx667.github.io/advanced_vanilla_objects/
+repo_name: Andx667/advanced_vanilla_objects
+repo_url: https://github.com/Andx667/advanced_vanilla_objects
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  logo: assets/logo.png
+  favicon: assets/icon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - content.action.edit
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - search.share
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - def_list
+  - abbr
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+plugins:
+  - privacy
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Objects:
+      - objects/index.md
+      - Antennas: objects/antennas.md
+      - Weather: objects/weather.md
+      - Tents: objects/tents.md
+      - Animations: objects/animations.md
+  - Scripting & API: scripting.md
+  - Components: components.md
+  - Contributing: contributing.md
+  - License: license.md
