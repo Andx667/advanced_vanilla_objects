@@ -115,7 +115,7 @@ Sub menu "Controls": extend and retract the server rack, turn the LED lights on 
 
 #### Solar panels
 
-Sub menu "Solar panels": rotate the panels and tilt both panels in steps. These are in their own addon, "Animations (Solar)", which is skipped when [Advanced Equipment](https://github.com/y0014984/Advanced-Equipment) or any other addon whose name starts with `AE` is loaded, because it has its own controls for them (needs Arma 3 2.22, older versions load it anyway).
+Sub menu "Solar panels": rotate the panels and tilt both panels in steps. These are in their own addon, "Animations (Solar)", which is skipped when [Advanced Equipment](https://github.com/y0014984/Advanced-Equipment) (`ae_main`) is loaded, because it has its own controls for them (needs Arma 3 2.22, older versions load it anyway).
 
 `Land_SolarPanel_04_black_F`, `Land_SolarPanel_04_olive_F`, `Land_SolarPanel_04_sand_F`
 

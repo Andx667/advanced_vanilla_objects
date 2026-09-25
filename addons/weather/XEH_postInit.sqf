@@ -13,7 +13,7 @@ private _readData = [
     {GVAR(enabled)},
     {},
     [],
-    {boundingCenter _target},
+    {[_target] call EFUNC(common,interactionPosition)},
     4
 ] call ACEFUNC(interact_menu,createAction);
 

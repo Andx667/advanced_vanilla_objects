@@ -20,8 +20,7 @@
  * Public: No
  */
 
-// Where the actions are: the point of the model closest to the player. The centre of a tall
-// or big model (flag pole, tents) is out of reach, and inside of a closed tent.
+// Where the actions are depends on the size of the object, see avo_common_fnc_interactionPosition
 private _position = {[_target] call EFUNC(common,interactionPosition)};
 private _distance = 4;
 
@@ -58,10 +57,16 @@ private _range = {
 // done in the time set in the config of the source, phases beyond that take longer, so
 // those can be set to be instant.
 private _toggle = {
-    params ["_id", "_noun", "_verbs", "_sources", ["_instant", false]];
+    params ["_id", "_noun", "_verbs", "_sources", ["_instant", false], ["_selections", []]];
     _verbs params ["_labelB", "_labelA", "_iconB", "_iconA"];
 
     private _names = _sources apply {_x select 0};
+
+    // Big objects (tents) have the action where the change is, the code has to be made for the selections
+    private _actionPosition = _position;
+    if (_selections isNotEqualTo []) then {
+        _actionPosition = compile format ["[_target, %1] call %2", _selections, QEFUNC(common,interactionPosition)];
+    };
 
     private _statement = {
         params ["_target", "_player", "_params"];
@@ -81,8 +86,8 @@ private _toggle = {
 
     [
         [
-            [format ["%1_%2_b", QGVAR(toggle), _id], format [_labelB, _noun], _iconB, _statement, _condition, {}, [_sources, _names, 2, _instant], _position, _distance] call ACEFUNC(interact_menu,createAction),
-            [format ["%1_%2_a", QGVAR(toggle), _id], format [_labelA, _noun], _iconA, _statement, _condition, {}, [_sources, _names, 1, _instant], _position, _distance] call ACEFUNC(interact_menu,createAction)
+            [format ["%1_%2_b", QGVAR(toggle), _id], format [_labelB, _noun], _iconB, _statement, _condition, {}, [_sources, _names, 2, _instant], _actionPosition, _distance] call ACEFUNC(interact_menu,createAction),
+            [format ["%1_%2_a", QGVAR(toggle), _id], format [_labelA, _noun], _iconA, _statement, _condition, {}, [_sources, _names, 1, _instant], _actionPosition, _distance] call ACEFUNC(interact_menu,createAction)
         ],
         _names
     ]
@@ -167,6 +172,14 @@ private _register = {
     } forEach _controls;
 };
 
+// Selections of a door of a tent that its hide source can belong to
+private _doorSelections = {
+    params ["_source"];
+
+    private _door = _source regexReplace ["_Hide$", ""];
+    [_door, _door + "_axis", _door + "_trigger"]
+};
+
 // --- Objects ---
 
 private _groupControls = ["controls", LLSTRING(group_controls)];
@@ -222,16 +235,16 @@ private _drawers = {
 
 // Tent doors. The door leaf is hidden when the door is open.
 [["Land_DeconTent_01_base_F"], _groupDoors, [
-    ["door1", format [LLSTRING(noun_doorN), 1], _open, [["Door_1_Hide", 0, 1]]] call _toggle,
-    ["door2", format [LLSTRING(noun_doorN), 2], _open, [["Door_2_Hide", 0, 1]]] call _toggle
+    ["door1", format [LLSTRING(noun_doorN), 1], _open, [["Door_1_Hide", 0, 1]], false, ["Door_1_Hide"] call _doorSelections] call _toggle,
+    ["door2", format [LLSTRING(noun_doorN), 2], _open, [["Door_2_Hide", 0, 1]], false, ["Door_2_Hide"] call _doorSelections] call _toggle
 ]] call _register;
 [["Land_ConnectorTent_01_base_F"], _groupDoors, ([1, 4] call _range) apply {
-    [format ["door%1", _x], format [LLSTRING(noun_doorN), _x], _open, [[format ["Door_%1_Hide", _x], 0, 1]]] call _toggle
+    [format ["door%1", _x], format [LLSTRING(noun_doorN), _x], _open, [[format ["Door_%1_Hide", _x], 0, 1]], false, [format ["Door_%1_Hide", _x]] call _doorSelections] call _toggle
 }] call _register;
 // The outer tents are the tent without the door, but their config has the source of the base
 private _outerTents = ("configName _x regexMatch 'Land_MedicalTent_01_.*_outer_F'" configClasses (configFile >> "CfgVehicles")) apply {configName _x};
 [["Land_MedicalTent_01_base_F"], [], [
-    ["door", LLSTRING(noun_door), _open, [["Door_Hide", 0, 1]]] call _toggle
+    ["door", LLSTRING(noun_door), _open, [["Door_Hide", 0, 1]], false, ["Door_Hide"] call _doorSelections] call _toggle
 ], _outerTents] call _register;
 
 // Fridge
