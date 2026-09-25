@@ -26,6 +26,7 @@ private _connect = [
     {
         params ["_target", "_player"];
         GVAR(enabled)
+        && {[_target] call FUNC(isActive)}
         && {!([_player, _target] call ACREFUNC(sys_gsa,isAntennaConnected))}
         && {[_player, _target] call ACREFUNC(sys_gsa,hasCompatibleRadios)}
     },
@@ -57,12 +58,15 @@ private _disconnect = [
     5
 ] call ACEFUNC(interact_menu,createAction);
 
-// Bases of every Contact variant (Olive/Black/Sand, small, mounted)
+// Bases of every Contact variant (Olive/Black/Sand, small, mounted) and the Rugged communications terminals
 {
     [_x, 0, [], _connect, true] call ACEFUNC(interact_menu,addActionToClass);
     [_x, 0, [], _disconnect, true] call ACEFUNC(interact_menu,addActionToClass);
 } forEach [
     "Land_SatelliteAntenna_01_F",
     "Land_SatelliteAntenna_01_mounted_base_F",
-    "OmniDirectionalAntenna_01_base_F"
+    "OmniDirectionalAntenna_01_base_F",
+    "RuggedTerminal_01_communications_F",
+    "RuggedTerminal_02_communications_F",
+    "RuggedTerminal_01_communications_hub_F"
 ];

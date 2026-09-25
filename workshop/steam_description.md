@@ -13,7 +13,7 @@ If a dependency of an addon is missing, that addon is skipped instead of throwin
 
 # Features
 
-- **Antennas** — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas and omni-directional antennas via the ACE interaction menu, like ACRE's ground spike antenna. The antenna sits at the real tip of the model, so height matters for signal.
+- **Antennas** — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas, omni-directional antennas and Rugged communications terminals (which must be activated first, i.e. "Open terminal" in the editor) via the ACE interaction menu, like ACRE's ground spike antenna. The antenna sits at the real tip of the model, so height matters for signal.
 - **Weather** — ACE action on the portable weather station (Contact) that reads precise weather data: wind at the anemometer, temperature, humidity, dew point and pressure from ACE weather, plus overcast, rain and fog.
 
 # Source & Issues

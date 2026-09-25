@@ -15,7 +15,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
-- Antennas - connect ACRE radios (PRC-117F, PRC-152) to the vanilla Contact satellite antennas and omni-directional antennas
+- Antennas - connect ACRE radios (PRC-117F, PRC-152) to the vanilla Contact satellite antennas, omni-directional antennas and Rugged communications terminals (once activated)
 - Weather - ACE action on the Contact portable weather station to read precise weather data
 - CBA setting per addon (Antennas, Weather) to disable its function
 

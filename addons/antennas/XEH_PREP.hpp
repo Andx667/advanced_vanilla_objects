@@ -1,1 +1,2 @@
 PREP(antennaPos);
+PREP(isActive);
