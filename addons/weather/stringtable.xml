@@ -37,6 +37,10 @@
             <English>Read Weather Data</English>
             <German>Wetterdaten ablesen</German>
         </Key>
+        <Key ID="STR_avo_weather_readWind">
+            <English>Read Wind</English>
+            <German>Wind ablesen</German>
+        </Key>
         <Key ID="STR_avo_weather_temperature">
             <English>Temperature: %1 °C</English>
             <German>Temperatur: %1 °C</German>
@@ -52,6 +56,10 @@
         <Key ID="STR_avo_weather_windCalm">
             <English>Wind: calm</English>
             <German>Wind: windstill</German>
+        </Key>
+        <Key ID="STR_avo_weather_windsockTitle">
+            <English>Windsock</English>
+            <German>Windsack</German>
         </Key>
     </Package>
 </Project>
