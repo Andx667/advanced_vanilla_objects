@@ -1,7 +1,7 @@
 # Advanced Vanilla Objects
 
 <p align="center">
-    <img src="https://github.com/Andx667/advanced_vanilla_objects/blob/main/img/icon.png" alt="Advanced Vanilla Objects Logo">
+    <img src="img/AVO_logo_512.png" width="256" alt="Advanced Vanilla Objects Logo">
 </p>
 
 <p align="center">
