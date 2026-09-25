@@ -43,22 +43,34 @@ if (_width <= 3.5) exitWith {
     [_centreX, _centreY, _chest]
 };
 
-// Big object. The selections of a model are not known, so look for the first one it has
-private _position = [];
+// Big object. The selections of a model are not known, so look for the first one it has. The
+// position code runs every frame for every action nearby, so the result is kept for the class.
+if (isNil QGVAR(selectionPositions)) then {
+    GVAR(selectionPositions) = createHashMap;
+};
 
-{
-    private _selection = _x;
+private _key = format ["%1|%2", typeOf _object, _selections];
+private _position = GVAR(selectionPositions) get _key;
+
+if (isNil "_position") then {
+    _position = [];
 
     {
-        private _point = _object selectionPosition [_selection, _x];
+        private _selection = _x;
 
-        if (_point isNotEqualTo [0, 0, 0]) exitWith {
-            _position = [_point select 0, _point select 1, (_point select 2) max ((_min select 2) + 0.8) min ((_min select 2) + 1.6)];
-        };
-    } forEach ["Memory", "FireGeometry", "Geometry", "ViewGeometry"];
+        {
+            private _point = _object selectionPosition [_selection, _x];
 
-    if (_position isNotEqualTo []) exitWith {};
-} forEach _selections;
+            if (_point isNotEqualTo [0, 0, 0]) exitWith {
+                _position = [_point select 0, _point select 1, (_point select 2) max ((_min select 2) + 0.8) min ((_min select 2) + 1.6)];
+            };
+        } forEach ["Memory", "FireGeometry", "Geometry", "ViewGeometry"];
+
+        if (_position isNotEqualTo []) exitWith {};
+    } forEach _selections;
+
+    GVAR(selectionPositions) set [_key, _position];
+};
 
 if (_position isNotEqualTo []) exitWith {_position};
 

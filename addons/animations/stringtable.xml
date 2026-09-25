@@ -2,8 +2,8 @@
 <Project name="avo">
     <Package name="animations">
         <Key ID="STR_avo_animations_Setting_Enabled_Description">
-            <English>Adds ACE interactions to vanilla objects that have animations but no way to change them in the game: drawers, doors, lids, lamps, panels and more.</English>
-            <German>Fügt Vanilla-Objekten mit Animationen, die sich im Spiel nicht ändern lassen, ACE-Interaktionen hinzu: Schubladen, Türen, Deckel, Lampen, Module und mehr.</German>
+            <English>Adds ACE interactions to vanilla objects that have animations but no way to change them in the game: drawers, doors, lids, switches and more.</English>
+            <German>Fügt Vanilla-Objekten mit Animationen, die sich im Spiel nicht ändern lassen, ACE-Interaktionen hinzu: Schubladen, Türen, Deckel, Schalter und mehr.</German>
         </Key>
         <Key ID="STR_avo_animations_Setting_Enabled_DisplayName">
             <English>Enable animation actions</English>
