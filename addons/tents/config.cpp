@@ -11,15 +11,24 @@ class CfgPatches {
             "cba_main",
             "ace_common",
             "ace_interact_menu",
-            "ace_weather",
-            "A3_Props_F_Enoch_Military_Equipment"
+            "ace_interaction",
+            "A3_Props_F_Enoch_Military_Camps",
+            "A3_Structures_F_Civ_Camping"
         };
         // Skip this addon instead of erroring when ACE or Contact content is missing
         skipWhenMissingDependencies = 1;
         units[] = {};
-        weapons[] = {};
+        weapons[] = {
+            QGVAR(solarOlive),
+            QGVAR(solarSand),
+            QGVAR(solarRedWhite),
+            QGVAR(solarBlueWhite),
+            QGVAR(dome),
+            QGVAR(a)
+        };
         VERSION_CONFIG;
     };
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgWeapons.hpp"

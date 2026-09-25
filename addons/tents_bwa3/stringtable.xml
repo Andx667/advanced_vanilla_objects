@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="tents_bwa3">
+        <Key ID="STR_avo_tents_bwa3_smallFleck">
+            <English>Tent (BWA3, Small, Flecktarn)</English>
+            <German>Zelt (BWA3, Klein, Flecktarn)</German>
+        </Key>
+    </Package>
+</Project>

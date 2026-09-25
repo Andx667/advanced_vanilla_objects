@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="tents">
+        <Key ID="STR_avo_tents_Setting_BuildTime_Description">
+            <English>How many seconds it takes to set up or pack up a tent.</English>
+            <German>Wie viele Sekunden das Auf- oder Abbauen eines Zeltes dauert.</German>
+        </Key>
+        <Key ID="STR_avo_tents_Setting_BuildTime_DisplayName">
+            <English>Build time</English>
+            <German>Bauzeit</German>
+        </Key>
+        <Key ID="STR_avo_tents_Setting_Enabled_Description">
+            <English>Allows setting up tents from packed tent items and packing placed tents up again.</English>
+            <German>Erlaubt es, Zelte aus Zeltpacks aufzubauen und aufgestellte Zelte wieder abzubauen.</German>
+        </Key>
+        <Key ID="STR_avo_tents_Setting_Enabled_DisplayName">
+            <English>Enable tents</English>
+            <German>Zelte aktivieren</German>
+        </Key>
+        <Key ID="STR_avo_tents_a">
+            <English>Tent (A-Frame)</English>
+            <German>Zelt (A-Form)</German>
+        </Key>
+        <Key ID="STR_avo_tents_abort">
+            <English>Aborted</English>
+            <German>Abgebrochen</German>
+        </Key>
+        <Key ID="STR_avo_tents_description">
+            <English>Packed tent. Set it up from the ACE self-interaction menu under Equipment.</English>
+            <German>Verpacktes Zelt. Wird über das ACE-Selbstinteraktionsmenü unter Ausrüstung aufgebaut.</German>
+        </Key>
+        <Key ID="STR_avo_tents_dome">
+            <English>Tent (Dome)</English>
+            <German>Zelt (Kuppel)</German>
+        </Key>
+        <Key ID="STR_avo_tents_hintErrorNoSpace">
+            <English>The tent cannot be placed here</English>
+            <German>Das Zelt kann hier nicht aufgebaut werden</German>
+        </Key>
+        <Key ID="STR_avo_tents_packUp">
+            <English>Pack Up Tent</English>
+            <German>Zelt abbauen</German>
+        </Key>
+        <Key ID="STR_avo_tents_packedUp">
+            <English>Tent packed up</English>
+            <German>Zelt abgebaut</German>
+        </Key>
+        <Key ID="STR_avo_tents_placeCancel">
+            <English>Cancel</English>
+            <German>Abbrechen</German>
+        </Key>
+        <Key ID="STR_avo_tents_placeConfirm">
+            <English>Confirm placement</English>
+            <German>Platzierung bestätigen</German>
+        </Key>
+        <Key ID="STR_avo_tents_placeRotate">
+            <English>Rotate</English>
+            <German>Drehen</German>
+        </Key>
+        <Key ID="STR_avo_tents_progressPackUp">
+            <English>Packing up tent...</English>
+            <German>Zelt wird abgebaut...</German>
+        </Key>
+        <Key ID="STR_avo_tents_progressSetUp">
+            <English>Setting up tent...</English>
+            <German>Zelt wird aufgebaut...</German>
+        </Key>
+        <Key ID="STR_avo_tents_setUp">
+            <English>Set Up Tent</English>
+            <German>Zelt aufbauen</German>
+        </Key>
+        <Key ID="STR_avo_tents_solarBlueWhite">
+            <English>Tent (Solar, Blue/White)</English>
+            <German>Zelt (Solar, Blau/Weiß)</German>
+        </Key>
+        <Key ID="STR_avo_tents_solarOlive">
+            <English>Tent (Solar, Olive)</English>
+            <German>Zelt (Solar, Oliv)</German>
+        </Key>
+        <Key ID="STR_avo_tents_solarRedWhite">
+            <English>Tent (Solar, Red/White)</English>
+            <German>Zelt (Solar, Rot/Weiß)</German>
+        </Key>
+        <Key ID="STR_avo_tents_solarSand">
+            <English>Tent (Solar, Sand)</English>
+            <German>Zelt (Solar, Sand)</German>
+        </Key>
+    </Package>
+</Project>

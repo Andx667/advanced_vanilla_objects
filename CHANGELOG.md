@@ -17,7 +17,9 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 - Antennas - connect ACRE radios (PRC-117F, PRC-152) to the vanilla Contact satellite antennas, omni-directional antennas and Rugged communications terminals, which have an ACE action to activate them first
 - Weather - ACE action on the Contact portable weather station to read precise weather data
-- CBA setting per addon (Antennas, Weather) to disable its function
+- Tents - packed tent items for the Contact solar tents, dome tent and A-frame tent, set up with ACE 3D placement, and a pack up action on the placed tents
+- Tents (BWA3) - the same for the BWA3 small tent, in a separate addon that is skipped when BWA3 is missing
+- CBA setting per addon (Antennas, Weather, Tents) to disable its function
 
 ## [0.1.0] - 2026-09-14
 

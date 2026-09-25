@@ -5,7 +5,7 @@ if (!hasInterface) exitWith {};
 private _readData = [
     QGVAR(readData),
     LLSTRING(readData),
-    QACEPATHTOF(kestrel4500,UI\Kestrel4500_Icon.paa),
+    QPATHTOF(data\readData_ca.paa),
     {
         params ["_target"];
         [_target] call FUNC(readData);
