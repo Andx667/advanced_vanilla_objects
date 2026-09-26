@@ -13,6 +13,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Changed
+
+- Branding - sky blue is now the DLC color and the main color of the documentation, with dark header text and darker link colors so the text stays readable (WCAG AA)
+
 ## [1.1.0] - 2026-09-25
 
 ### Added
