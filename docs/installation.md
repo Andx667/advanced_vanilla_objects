@@ -16,6 +16,7 @@ Optional, each one is needed by a single addon only:
 | --- | --- |
 | [ACRE2](https://github.com/IDI-Systems/acre2) | [Antennas](objects/antennas.md) |
 | [BWA3](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537) | The BWA3 small tent of [Tents](objects/tents.md) |
+| [Global Mobilization](https://store.steampowered.com/app/1042220) | The antenna of the command shelters of [Antennas](objects/antennas.md#global-mobilization-command-shelters), together with ACRE2 |
 
 If a dependency of an addon is missing, that addon is skipped instead of throwing errors (`skipWhenMissingDependencies`), the others still work. The [solar panel controls](objects/animations.md#solar-panels) are skipped when [Advanced Equipment](https://github.com/y0014984/Advanced-Equipment) is loaded, it has its own.
 
@@ -45,4 +46,4 @@ hemtt build
 
 Run `hemtt check` to validate configs, scripts, and stringtables without producing a build.
 
-`hemtt launch` starts Arma with the mod and the test mission `.hemtt/missions/test.VR`, which has the objects of these docs placed in rows. `hemtt launch acre` and `hemtt launch bwa3` also load ACRE2 or BWA3.
+`hemtt launch` starts Arma with the mod and the test mission `.hemtt/missions/test.VR`, which has the objects of these docs placed in rows. `hemtt launch acre`, `hemtt launch bwa3` and `hemtt launch gm` also load ACRE2, BWA3 or ACRE2 with Global Mobilization, the latter with the test mission `.hemtt/missions/gm.VR`.

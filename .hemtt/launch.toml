@@ -6,7 +6,7 @@ workshop = [
 # Test mission with the vanilla objects the addons add functions to, in .hemtt/missions/
 mission = "test.VR"
 
-# Launched with `hemtt launch acre` / `hemtt launch bwa3`
+# Launched with `hemtt launch acre` / `hemtt launch bwa3` / `hemtt launch gm`
 [acre]
 extends = "default"
 workshop = [
@@ -18,3 +18,11 @@ extends = "default"
 workshop = [
     "1200127537", # BWMod
 ]
+
+# Global Mobilization with ACRE, opens the GM test mission
+[gm]
+extends = "acre"
+dlc = [
+    "gm",
+]
+mission = "gm.VR"

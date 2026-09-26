@@ -1,0 +1,141 @@
+version=54;
+class EditorData
+{
+	moveGridStep=2;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=517;
+	class ItemIDProvider
+	{
+		nextID=4;
+	};
+	class Camera
+	{
+		pos[]={6,8,-20};
+		dir[]={0,-0.25,1};
+		up[]={0,1,0};
+		aside[]={1,0,0};
+	};
+};
+binarizationWanted=0;
+sourceName="gm";
+addons[]=
+{
+	"A3_Characters_F",
+	"gm_objects_container_shelterace_ge_army_shelterace"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="gm_objects_container_shelterace_ge_army_shelterace";
+			name="Global Mobilization - Shelters";
+			author="Global Mobilization Team";
+			url="https://www.globalmobilization.com";
+		};
+	};
+};
+randomSeed=1;
+class ScenarioData
+{
+	author="Andx";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=1985;
+		day=28;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=3;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={0,5.0014391,-15};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="{ if (isClass (configFile >> ""CfgWeapons"" >> _x)) then { this addItemToUniform _x } } forEach [""ACRE_PRC152"", ""ACRE_PRC117F""];";
+						isPlayer=1;
+					};
+					id=1;
+					type="B_Soldier_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=0;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-6,5,5};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="shelter_antenna";
+			};
+			id=2;
+			type="gm_ge_army_shelteraceI_command";
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6,5,5};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="shelter_bare";
+			};
+			id=3;
+			type="gm_ge_army_shelteraceI_command";
+		};
+	};
+};

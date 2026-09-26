@@ -9,8 +9,8 @@ Every action raises a CBA event after it was used. They are raised with `CBA_fnc
 | Event | Payload | Raised when |
 | --- | --- | --- |
 | `avo_animations_changed` | `[object, control, changes, unit]` | An animation action is used, see [below](#avo_animations_changed) |
-| `avo_antennas_activated` | `[terminal, unit]` | A Rugged terminal is activated |
-| `avo_antennas_deactivated` | `[terminal, unit]` | A Rugged terminal is deactivated |
+| `avo_antennas_activated` | `[terminal, unit]` | A Rugged terminal is activated, or an antenna mast extended |
+| `avo_antennas_deactivated` | `[terminal, unit]` | A Rugged terminal is deactivated, or an antenna mast retracted |
 | `avo_antennas_connected` | `[antenna, radioId, unit]` | A radio is connected to one of the antennas or terminals |
 | `avo_antennas_disconnected` | `[antenna, unit, radioId]` | A radio is disconnected from one of them. `radioId` is `""` when ACRE does not tell it |
 | `avo_tents_setUp` | `[tent, unit, item]` | A tent is set up from a tent item |
@@ -134,5 +134,7 @@ The position of the top centre of an object's bounding box, in ASL. Follows the 
 
 | Property | Class | Description |
 | --- | --- | --- |
-| `avo_antennas_activeSources[]` | `CfgVehicles` | Animation sources that switch an antenna object on, used by the Rugged communications terminals. The first one marks the state and has to be above 0 |
+| `avo_antennas_activeSources[]` | `CfgVehicles` | Animation sources that switch an antenna object on, used by the Rugged communications terminals and the antenna masts of the GM shelters. The first one marks the state and has to be above 0 |
+| `avo_antennas_activePhase` | `CfgVehicles` | Phase the active sources go to when the antenna is switched on (default `100`) |
+| `avo_antennas_requiredSources[]` | `CfgVehicles` | Animation sources that show the antenna of an object where it is an option. The object has no antenna actions while one of them is 0 |
 | `avo_tents_object` | `CfgWeapons` | Tent object class an item sets up, see [Adding tents](#adding-tents) |

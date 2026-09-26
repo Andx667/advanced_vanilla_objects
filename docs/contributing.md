@@ -10,7 +10,7 @@
     ```
 
 3. Build the mod with `hemtt build`, or validate it without building via `hemtt check`.
-4. `hemtt launch` starts Arma 3 with the mod and the test mission `.hemtt/missions/test.VR`, `hemtt launch acre` and `hemtt launch bwa3` also load ACRE2 or BWA3.
+4. `hemtt launch` starts Arma 3 with the mod and the test mission `.hemtt/missions/test.VR`, `hemtt launch acre`, `hemtt launch bwa3` and `hemtt launch gm` also load ACRE2, BWA3 or ACRE2 with Global Mobilization.
 
 ## Coding guidelines
 
