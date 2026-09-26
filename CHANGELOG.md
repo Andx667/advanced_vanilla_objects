@@ -17,6 +17,10 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 - Antennas - the command shelters of Global Mobilization (optional addon `avo_antennas_gm`): extend and retract the antenna mast, and connect an ACRE radio once it is extended
 
+### Changed
+
+- Branding - sky blue is now the DLC color and the main color of the documentation, with dark header text and darker link colors so the text stays readable (WCAG AA)
+
 ## [1.1.0] - 2026-09-25
 
 ### Added
