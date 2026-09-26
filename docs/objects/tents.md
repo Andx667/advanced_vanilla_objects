@@ -16,7 +16,7 @@ Placed tents have an inventory. **Tent** → **Open Inventory** opens it, to sto
 
 The tents are buildings and cannot hold cargo, so the inventory is an invisible container (`avo_tents_container`) that is attached to the tent the first time the inventory is opened. It holds as much as an ammo box (2000 mass). If you delete a tent with a script, delete its container as well, see [Scripting & API](../scripting.md#variables).
 
-Only the tents in the [table](#tents) have an inventory, the big tents (decon, connector and medical tents) have none. The server makes the containers, so the mod has to be on the server for the inventory to work. When the server does not answer, a message says the inventory cannot be opened.
+Only the tents in the [table](#tents) have an inventory, the big tents (decon, connector and medical tents) have none. The server makes the containers, so the mod has to be on the server for the inventory to work. When the server cannot make one, a message says the inventory cannot be opened.
 
 The **Tent inventory** setting turns this off: tents that have no inventory yet do not get one, and pack up works as before. A tent that already has an inventory keeps it, so nothing in it is lost.
 

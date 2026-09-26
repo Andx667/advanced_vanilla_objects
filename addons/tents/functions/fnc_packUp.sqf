@@ -30,15 +30,6 @@ if (_item == "" || {!(_caller canAdd [_item, 1])}) exitWith {
 
 if (!isNil {_tent getVariable QGVAR(container)}) exitWith {
     [QGVAR(commitPackUp), [_tent, _caller]] call CBA_fnc_serverEvent;
-
-    // The tent must not stay locked when the answer does not come
-    [{
-        params ["_tent", "_caller"];
-
-        if (!isNull _tent && {_tent getVariable [QGVAR(inUse), false]}) then {
-            [_caller, _tent] call FUNC(cancel);
-        };
-    }, [_tent, _caller], 10] call CBA_fnc_waitAndExecute;
 };
 
 [_tent, _caller] call FUNC(finishPackUp);
