@@ -15,7 +15,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
-- Tents - placed tents have an inventory, opened with "Open Inventory" (invisible container attached to the tent, event `avo_tents_inventoryOpened`). A tent with items in it cannot be packed up. The new "Tent inventory" setting turns it off for tents that have none yet
+- Tents - placed tents have an inventory, opened with "Open Inventory" (invisible container attached to the tent, event `avo_tents_inventoryOpened`). A tent with items in it cannot be packed up, and the server checks that when the pack up is done. Only the tents that can be set up have an inventory, not the big decon, connector and medical tents. The new "Tent inventory" setting turns it off for tents that have none yet
 
 ### Changed
 

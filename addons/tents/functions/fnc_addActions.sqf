@@ -20,22 +20,7 @@
 
 if (!hasInterface) exitWith {};
 
-private _cfgVehicles = configFile >> "CfgVehicles";
-
-// [item, tent object] for every tent item whose object is available
-GVAR(tentItems) = [];
-// lowercase tent object classname -> item
-GVAR(itemOfTent) = createHashMap;
-
-{
-    private _object = getText (_x >> QGVAR(object));
-
-    if (isClass (_cfgVehicles >> _object)) then {
-        GVAR(tentItems) pushBack [configName _x, _object];
-        GVAR(itemOfTent) set [toLowerANSI _object, configName _x];
-    };
-} forEach (format ["isText (_x >> '%1')", QGVAR(object)] configClasses (configFile >> "CfgWeapons"));
-
+// The tent items are found by avo_tents_fnc_scanItems, before this
 if (GVAR(tentItems) isEqualTo []) exitWith {};
 
 // Parent container in the equipment menu, opens a sub-menu with one entry per carried tent
@@ -113,11 +98,10 @@ private _openInventory = [
     {
         params ["_target", "_player"];
 
-        // A tent that has an inventory keeps it when the setting is turned off, or what is in it could not be reached
+        // A tent that has, or had, an inventory keeps it when the setting is turned off, or what is in it could not be reached
         GVAR(enabled)
         && {isNull objectParent _player}
-        && {GVAR(inventory) || {!isNull (_target getVariable [QGVAR(container), objNull])}}
-        && {!(_target getVariable [QGVAR(inUse), false])}
+        && {GVAR(inventory) || {!isNil {_target getVariable QGVAR(container)}}}
     },
     {},
     [],
@@ -145,8 +129,14 @@ private _packUp = [
     _distance
 ] call ACEFUNC(interact_menu,createAction);
 
+// Once for every tent object. Two items can set up the same one, ACE would add the actions twice
+private _registered = createHashMap;
+
 {
     private _class = _x select 1;
+
+    if (_registered getOrDefault [toLowerANSI _class, false]) then {continue};
+    _registered set [toLowerANSI _class, true];
 
     [_class, 0, [], _group] call ACEFUNC(interact_menu,addActionToClass);
     [_class, 0, [QGVAR(group)], _openInventory] call ACEFUNC(interact_menu,addActionToClass);

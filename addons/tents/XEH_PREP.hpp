@@ -1,11 +1,14 @@
 PREP(addActions);
 PREP(cancel);
 PREP(canPackUp);
+PREP(commitPackUp);
 PREP(construct);
 PREP(createContainer);
+PREP(finishPackUp);
 PREP(isEmpty);
 PREP(openInventory);
 PREP(packUp);
 PREP(place);
 PREP(progressPackUp);
+PREP(scanItems);
 PREP(startBuild);

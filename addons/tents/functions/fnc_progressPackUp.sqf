@@ -1,8 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Starts the progress bar for packing up a tent, unless there is something in its inventory.
- * The tent is locked while it runs so it cannot be packed up twice.
+ * Starts the progress bar for packing up a tent. The tent is locked while it runs so it
+ * cannot be packed up twice, and the bar stops when something is put in the tent.
  *
  * Arguments:
  * 0: Tent <OBJECT>
@@ -19,12 +19,6 @@
 
 params ["_tent", "_caller"];
 
-// The action is only shown for an empty tent, this is for what was put in while the menu was open.
-// What is in the inventory of the tent would be lost, it has to be taken out first
-if !([_tent] call FUNC(isEmpty)) exitWith {
-    [LLSTRING(notEmpty), true] call ACEFUNC(common,displayText);
-};
-
 _tent setVariable [QGVAR(inUse), true, true];
 
 _caller playMove "Acts_carFixingWheel";
@@ -38,6 +32,14 @@ _caller playMove "Acts_carFixingWheel";
     {
         (_this select 0) params ["_tent", "_caller"];
         [_caller, _tent] call FUNC(cancel);
+
+        // What is in the inventory of the tent would be lost, it has to be taken out first
+        if !([_tent] call FUNC(isEmpty)) then {
+            [LLSTRING(notEmpty), true] call ACEFUNC(common,displayText);
+        };
     },
-    LLSTRING(progressPackUp)
+    LLSTRING(progressPackUp),
+    {
+        [(_this select 0) select 0] call FUNC(isEmpty)
+    }
 ] call ACEFUNC(common,progressBar);

@@ -53,6 +53,10 @@
             <English>The tent cannot be placed here</English>
             <German>Das Zelt kann hier nicht aufgebaut werden</German>
         </Key>
+        <Key ID="STR_avo_tents_inventoryFailed">
+            <English>The inventory cannot be opened</English>
+            <German>Das Inventar kann nicht geöffnet werden</German>
+        </Key>
         <Key ID="STR_avo_tents_notEmpty">
             <English>The tent has to be empty to be packed up</English>
             <German>Das Zelt muss zum Abbauen leer sein</German>
