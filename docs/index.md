@@ -11,7 +11,7 @@ The project is entirely open-source and any contributions are welcome — see [C
 
 ## Core Features
 
-- **[Antennas](objects/antennas.md)** — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas, omni-directional antennas and Rugged communications terminals The command shelters of Global Mobilization (needs GM) have an antenna mast that is extended the same way: extend it, then connect a radio.
+- **[Antennas](objects/antennas.md)** — connect a compatible ACRE radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas, omni-directional antennas and Rugged communications terminals. The command shelters of Global Mobilization (needs GM) have an antenna mast that is extended the same way: extend it, then connect a radio.
 - **[Weather](objects/weather.md)** — read precise weather data at the portable weather station, and the wind at the windsock
 - **[Tents](objects/tents.md)** — packed tent items that are set up with ACE's 3D placement, and a pack up action on the placed tents
 - **[Animations](objects/animations.md)** — ACE actions for drawers, doors, lids, switches and more that could only be changed in the editor
