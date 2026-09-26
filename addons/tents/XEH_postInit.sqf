@@ -20,6 +20,9 @@ if (!hasInterface) exitWith {};
         [_caller] call FUNC(cancel);
     };
 
+    // The tent was released when the answer took too long, see avo_tents_fnc_packUp
+    if !(_tent getVariable [QGVAR(inUse), false]) exitWith {};
+
     if (_empty) exitWith {
         [_tent, _caller] call FUNC(finishPackUp);
     };
