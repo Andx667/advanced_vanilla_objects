@@ -13,7 +13,9 @@ class CfgPatches {
         // Skip this addon instead of erroring when BWA3 is missing. avo_tents is a
         // requirement too, so it is skipped as well when the tents addon is.
         skipWhenMissingDependencies = 1;
-        units[] = {};
+        units[] = {
+            "Item_avo_tents_bwa3_smallFleck"
+        };
         weapons[] = {
             QGVAR(smallFleck)
         };
@@ -21,4 +23,5 @@ class CfgPatches {
     };
 };
 
+#include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"

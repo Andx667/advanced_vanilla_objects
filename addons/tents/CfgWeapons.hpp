@@ -10,9 +10,12 @@ class CfgWeapons {
         scope = 0;
         displayName = "";
         descriptionShort = CSTRING(description);
-        // Ground model of the packed tent. A CfgWeapons model cannot carry per colour textures,
-        // so every tent uses the folded solar tent.
+        // Ground model of the packed tent, the folded solar tent for every tent. The solar tents
+        // set the texture of their colour on it, like a retextured weapon does. Every other tent,
+        // also the ones of other addons, is the olive one.
         model = "\a3\Props_F_Enoch\Military\Camps\TentSolar_01_folded_F.p3d";
+        hiddenSelections[] = {"Camo_1"};
+        hiddenSelectionsTextures[] = {"a3\Props_F_Enoch\Military\Camps\data\TentSolar_01_olive_F_CO.paa"};
         // Inventory picture: the editor preview of the tent object, from the game files. The
         // A-frame tent is the default for the tents of other addons. The item_*_ca.paa in the data
         // folder (sources: img/tent_item_*) are pictures made for the tents, they are not used.
@@ -27,24 +30,28 @@ class CfgWeapons {
         scope = 2;
         displayName = CSTRING(solarOlive);
         picture = "\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\Land_TentSolar_01_olive_F.jpg";
+        hiddenSelectionsTextures[] = {"a3\Props_F_Enoch\Military\Camps\data\TentSolar_01_olive_F_CO.paa"};
         GVAR(object) = "Land_TentSolar_01_olive_F";
     };
     class GVAR(solarSand): GVAR(base) {
         scope = 2;
         displayName = CSTRING(solarSand);
         picture = "\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\Land_TentSolar_01_sand_F.jpg";
+        hiddenSelectionsTextures[] = {"a3\Props_F_Enoch\Military\Camps\data\TentSolar_01_sand_F_CO.paa"};
         GVAR(object) = "Land_TentSolar_01_sand_F";
     };
     class GVAR(solarRedWhite): GVAR(base) {
         scope = 2;
         displayName = CSTRING(solarRedWhite);
         picture = "\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\Land_TentSolar_01_redwhite_F.jpg";
+        hiddenSelectionsTextures[] = {"a3\Props_F_Enoch\Military\Camps\data\TentSolar_01_redwhite_F_CO.paa"};
         GVAR(object) = "Land_TentSolar_01_redwhite_F";
     };
     class GVAR(solarBlueWhite): GVAR(base) {
         scope = 2;
         displayName = CSTRING(solarBlueWhite);
         picture = "\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\Land_TentSolar_01_bluewhite_F.jpg";
+        hiddenSelectionsTextures[] = {"a3\Props_F_Enoch\Military\Camps\data\TentSolar_01_bluewhite_F_CO.paa"};
         GVAR(object) = "Land_TentSolar_01_bluewhite_F";
     };
     class GVAR(dome): GVAR(base) {

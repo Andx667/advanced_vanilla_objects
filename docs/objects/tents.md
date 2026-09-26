@@ -34,6 +34,10 @@ The server also decides that a tent is empty when it is packed up, so what anoth
 | A-frame tent | `avo_tents_a` | `Land_TentA_F` |
 | BWA3 small tent (needs BWA3, addon `avo_tents_bwa3`) | `avo_tents_bwa3_smallFleck` | `BWA3_Tent_small_Fleck` |
 
+## Eden and Zeus
+
+The packed tents are listed in Eden and Zeus under **Equipment** → **Items**, as `Item_` and the item class, for example `Item_avo_tents_dome`. Players take them from the ground like any item. The folded solar tents of the game (`Land_TentSolar_01_folded_*_F`) are only scenery, they cannot be picked up.
+
 The pack up and inventory actions are only for these exact classes, not for the classes derived from them. Other mods can add their own tents, see [Adding tents](../scripting.md#adding-tents).
 
 The larger tents (decon, connector and medical tents) are not packable, they only have [door actions](animations.md#tents).
