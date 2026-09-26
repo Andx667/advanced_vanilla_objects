@@ -1,16 +1,26 @@
-/* Advanced Vanilla Objects brand color: dark green (the mod's dlcColor). */
+/* Advanced Vanilla Objects brand color: sky blue (the mod's dlcColor, #87CEEB).
+   Sky blue is a light color, so it only works as a background. White text on it
+   has a contrast of 1.7:1, so text on the header uses a dark navy instead
+   (8.1:1). Links cannot use the sky blue on the white page either, so they get
+   a darker blue in light mode. All pairs below meet WCAG AA (4.5:1). */
 :root {
-  --md-primary-fg-color: #3B644D;
-  --md-primary-fg-color--light: #5E8E73;
-  --md-primary-fg-color--dark: #22392C;
+  --md-primary-fg-color: #87CEEB;
+  --md-primary-fg-color--light: #B4E1F5;
+  --md-primary-fg-color--dark: #5DB4DB;
+  /* Text and icons on the primary color (header, tabs, buttons). */
+  --md-primary-bg-color: #0B2E44;
+  --md-primary-bg-color--light: rgba(11, 46, 68, 0.85);
 }
 
-/* Darker in light mode (reads on a near-white page), brighter in dark mode
-   (reads against the dark slate background). */
+/* Light mode: the sky blue on white is only 1.7:1, so links and accents use a
+   darker blue (7.2:1 on white, 9.5:1 on hover). */
 [data-md-color-scheme="default"] {
-  --md-accent-fg-color: #3B644D;
+  --md-typeset-a-color: #0A5C8A;
+  --md-accent-fg-color: #074A70;
 }
 
+/* Dark mode: the sky blue reads well on the dark slate page (9.3:1). */
 [data-md-color-scheme="slate"] {
-  --md-accent-fg-color: #7FC29B;
+  --md-typeset-a-color: #87CEEB;
+  --md-accent-fg-color: #B4E1F5;
 }
