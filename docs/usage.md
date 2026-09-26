@@ -27,7 +27,7 @@ Look at a portable weather station and choose **Read Weather Data**, or at the w
 3. A preview follows your view. The mouse wheel rotates it, left click confirms, right click cancels.
 4. Stay until the progress bar is done.
 
-Look at a placed tent and choose **Pack Up Tent** to get the item back, you need room for it. See [Tents](objects/tents.md).
+Look at a placed tent and open the **Tent** sub menu. **Open Inventory** opens the storage of the tent, **Pack Up Tent** gets the item back, you need room for it. It is only shown while the inventory of the tent is empty. See [Tents](objects/tents.md).
 
 ## Animations
 
@@ -41,6 +41,6 @@ Each addon has an **Enable ...** checkbox under its own category (**Advanced Van
 | --- | --- |
 | Antennas | Enable antenna connections |
 | Weather | Enable weather station readout |
-| Tents | Enable tents, Build time |
+| Tents | Enable tents, Build time, Tent inventory |
 | Animations | Enable animation actions |
 | Animations (Solar) | Enable solar panel controls |

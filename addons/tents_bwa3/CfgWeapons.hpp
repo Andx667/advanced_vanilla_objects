@@ -6,5 +6,6 @@ class CfgWeapons {
         scope = 2;
         displayName = CSTRING(smallFleck);
         EGVAR(tents,object) = "BWA3_Tent_small_Fleck";
+        picture = "\bwa3_props\editorpreview\BWA3_Tent_small_Fleck.jpg";
     };
 };

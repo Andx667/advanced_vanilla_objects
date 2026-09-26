@@ -1,8 +1,9 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Checks if a unit can pack up a tent. Any tent of a supported class can be packed up,
- * set the `avo_tents_canPackUp` object variable to false to prevent that for one tent.
+ * Checks if a unit can pack up a tent. Any tent of a supported class can be packed up while
+ * its inventory is empty, set the `avo_tents_canPackUp` object variable to false to prevent
+ * that for one tent.
  *
  * Arguments:
  * 0: Tent <OBJECT>
@@ -26,4 +27,5 @@ GVAR(enabled)
 && {isNull objectParent _unit}
 && {_tent getVariable [QGVAR(canPackUp), true]}
 && {!(_tent getVariable [QGVAR(inUse), false])}
+&& {[_tent] call FUNC(isEmpty)}
 && {_unit canAdd [_item, 1]}

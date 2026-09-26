@@ -3,7 +3,8 @@
  * Author: Andx
  * Registers the ACE interactions for tents. Every CfgWeapons item that names a tent
  * object in its `avo_tents_object` property gets a "set up" self-interaction (shown while
- * the item is carried), and every tent object gets a "pack up" interaction.
+ * the item is carried), and every tent object gets a sub menu with "open inventory" and
+ * "pack up".
  *
  * Arguments:
  * None
@@ -19,22 +20,7 @@
 
 if (!hasInterface) exitWith {};
 
-private _cfgVehicles = configFile >> "CfgVehicles";
-
-// [item, tent object] for every tent item whose object is available
-GVAR(tentItems) = [];
-// lowercase tent object classname -> item
-GVAR(itemOfTent) = createHashMap;
-
-{
-    private _object = getText (_x >> QGVAR(object));
-
-    if (isClass (_cfgVehicles >> _object)) then {
-        GVAR(tentItems) pushBack [configName _x, _object];
-        GVAR(itemOfTent) set [toLowerANSI _object, configName _x];
-    };
-} forEach (format ["isText (_x >> '%1')", QGVAR(object)] configClasses (configFile >> "CfgWeapons"));
-
+// The tent items are found by avo_tents_fnc_scanItems, before this
 if (GVAR(tentItems) isEqualTo []) exitWith {};
 
 // Parent container in the equipment menu, opens a sub-menu with one entry per carried tent
@@ -82,6 +68,47 @@ private _setUp = [
     ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment", QGVAR(setUp)], _child, true] call ACEFUNC(interact_menu,addActionToClass);
 } forEach GVAR(tentItems);
 
+// Where the actions are depends on the size of the tent, see avo_common_fnc_interactionPosition
+private _position = {[_target] call EFUNC(common,interactionPosition)};
+private _distance = 6;
+
+// Pack up and the inventory can be shown together, so they are in one sub menu, or their
+// interaction points would be at the same place. The sub menu is only shown when one of them is.
+private _group = [
+    QGVAR(group),
+    LLSTRING(group),
+    "",
+    {},
+    {GVAR(enabled)},
+    {},
+    [],
+    _position,
+    _distance
+] call ACEFUNC(interact_menu,createAction);
+
+private _openInventory = [
+    QGVAR(openInventory),
+    LLSTRING(openInventory),
+    "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa",
+    {
+        params ["_target", "_player"];
+
+        [_target, _player] call FUNC(openInventory);
+    },
+    {
+        params ["_target", "_player"];
+
+        // A tent that has, or had, an inventory keeps it when the setting is turned off, or what is in it could not be reached
+        GVAR(enabled)
+        && {isNull objectParent _player}
+        && {GVAR(inventory) || {!isNil {_target getVariable QGVAR(container)}}}
+    },
+    {},
+    [],
+    _position,
+    _distance
+] call ACEFUNC(interact_menu,createAction);
+
 private _packUp = [
     QGVAR(packUp),
     LLSTRING(packUp),
@@ -98,10 +125,20 @@ private _packUp = [
     },
     {},
     [],
-    {[_target] call EFUNC(common,interactionPosition)},
-    6
+    _position,
+    _distance
 ] call ACEFUNC(interact_menu,createAction);
 
+// Once for every tent object. Two items can set up the same one, ACE would add the actions twice
+private _registered = createHashMap;
+
 {
-    [_x select 1, 0, [], _packUp] call ACEFUNC(interact_menu,addActionToClass);
+    private _class = _x select 1;
+
+    if (_registered getOrDefault [toLowerANSI _class, false]) then {continue};
+    _registered set [toLowerANSI _class, true];
+
+    [_class, 0, [], _group] call ACEFUNC(interact_menu,addActionToClass);
+    [_class, 0, [QGVAR(group)], _openInventory] call ACEFUNC(interact_menu,addActionToClass);
+    [_class, 0, [QGVAR(group)], _packUp] call ACEFUNC(interact_menu,addActionToClass);
 } forEach GVAR(tentItems);

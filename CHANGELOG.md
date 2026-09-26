@@ -13,6 +13,16 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Tents - placed tents have an inventory, opened with "Open Inventory" (invisible container attached to the tent, event `avo_tents_inventoryOpened`). A tent with items in it cannot be packed up, and the server checks that when the pack up is done. Only the tents that can be set up have an inventory, not the big decon, connector and medical tents. The new "Tent inventory" setting turns it off for tents that have none yet
+- Tents - the packed tents are listed in Eden and Zeus (Equipment, Items) and can be picked up from the ground, as `Item_` and the item class
+
+### Changed
+
+- Tents - "Pack Up Tent" is now in a "Tent" sub menu together with "Open Inventory"
+- Tents - the packed tent items have a picture of their tent in the inventory (solar tents in their four colours, dome tent, A-frame tent) instead of a backpack
+
 ## [1.2.0] - 2026-09-26
 
 ### Added

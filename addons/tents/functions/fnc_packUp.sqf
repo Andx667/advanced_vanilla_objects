@@ -1,7 +1,10 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Removes the tent and gives the matching tent item to the caller.
+ * The progress bar of packing up a tent is done. A tent that has an inventory is looked at by
+ * the server, which owns it: it checks that the inventory is empty and removes it in one step,
+ * so what another player puts in at the last moment is not lost. It answers with
+ * avo_tents_packUpAnswer. The tent is finished right away when it has no inventory.
  *
  * Arguments:
  * 0: Tent <OBJECT>
@@ -25,21 +28,8 @@ if (_item == "" || {!(_caller canAdd [_item, 1])}) exitWith {
     [_caller, _tent] call FUNC(cancel);
 };
 
-private _grassCutter = _tent getVariable [QGVAR(grassCutter), objNull];
-
-if (!isNull _grassCutter) then {
-    deleteVehicle _grassCutter;
+if (!isNil {_tent getVariable QGVAR(container)}) exitWith {
+    [QGVAR(commitPackUp), [_tent, _caller]] call CBA_fnc_serverEvent;
 };
 
-private _posASL = getPosASL _tent;
-private _vectorDirAndUp = [vectorDir _tent, vectorUp _tent];
-private _classname = typeOf _tent;
-
-deleteVehicle _tent;
-
-_caller addItem _item;
-
-[QGVAR(packedUp), [_classname, _posASL, _vectorDirAndUp, _caller, _item]] call CBA_fnc_globalEvent;
-_caller switchMove "";
-
-[LLSTRING(packedUp)] call ACEFUNC(common,displayText);
+[_tent, _caller] call FUNC(finishPackUp);
