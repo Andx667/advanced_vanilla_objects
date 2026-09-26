@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="antennas_gm">
+        <Key ID="STR_avo_antennas_gm_extend">
+            <English>Extend Antenna</English>
+            <German>Antenne ausfahren</German>
+        </Key>
+        <Key ID="STR_avo_antennas_gm_menu">
+            <English>Antenna</English>
+            <German>Antenne</German>
+        </Key>
+        <Key ID="STR_avo_antennas_gm_retract">
+            <English>Retract Antenna</English>
+            <German>Antenne einfahren</German>
+        </Key>
+    </Package>
+</Project>

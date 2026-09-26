@@ -4,7 +4,7 @@
  * Checks if an antenna object is active. Most are always active. Objects that have to be
  * switched on first (Rugged communications terminals, "Open terminal" in the editor) list
  * their animation sources in the `avo_antennas_activeSources` config property; they are
- * active while the first one is above 0.
+ * active while the first one is above 0, and while the object is equipped, see isEquipped.
  *
  * Arguments:
  * 0: Antenna object <OBJECT>
@@ -22,4 +22,4 @@ params ["_object"];
 
 private _sources = getArray (configOf _object >> QGVAR(activeSources));
 
-_sources isEqualTo [] || {(_object animationSourcePhase (_sources select 0)) > 0}
+[_object] call FUNC(isEquipped) && {_sources isEqualTo [] || {(_object animationSourcePhase (_sources select 0)) > 0}}

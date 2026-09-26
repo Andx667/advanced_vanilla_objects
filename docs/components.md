@@ -7,6 +7,7 @@ AVO follows the standard ACE-style addon layout: functionality is split across s
 | `avo_main` | Shared macros, mod metadata |
 | `avo_common` | Shared dependencies, the [public functions](scripting.md#functions) for class actions, interaction points and model positions |
 | `avo_antennas` | [Antennas](objects/antennas.md): ACRE connection, activation of the Rugged terminals |
+| `avo_antennas_gm` | Optional: the antenna mast of the [Global Mobilization command shelters](objects/antennas.md#global-mobilization-command-shelters), skipped without Global Mobilization |
 | `avo_weather` | [Weather](objects/weather.md): weather station and windsock readout |
 | `avo_tents` | [Tents](objects/tents.md): tent items, 3D placement, pack up |
 | `avo_tents_bwa3` | Optional: the BWA3 small tent, skipped without BWA3 |
