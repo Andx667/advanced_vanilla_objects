@@ -13,6 +13,8 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-09-26
+
 ### Added
 
 - Antennas - the command shelters of Global Mobilization (optional addon `avo_antennas_gm`): extend and retract the antenna mast, and connect an ACRE radio once it is extended
