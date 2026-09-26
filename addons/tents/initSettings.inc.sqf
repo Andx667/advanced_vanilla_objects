@@ -15,3 +15,12 @@
     [2, 60, 8, 0],
     true
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(inventory),
+    "CHECKBOX",
+    [LLSTRING(Setting_Inventory_DisplayName), LLSTRING(Setting_Inventory_Description)],
+    COMPONENT_NAME,
+    [true],
+    true
+] call CBA_fnc_addSetting;

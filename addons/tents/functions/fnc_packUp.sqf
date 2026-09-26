@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: Andx
- * Removes the tent and gives the matching tent item to the caller.
+ * Removes the tent, with its empty inventory, and gives the matching tent item to the caller.
  *
  * Arguments:
  * 0: Tent <OBJECT>
@@ -25,11 +25,20 @@ if (_item == "" || {!(_caller canAdd [_item, 1])}) exitWith {
     [_caller, _tent] call FUNC(cancel);
 };
 
+// Something could have been put in while the progress bar was running
+if !([_tent] call FUNC(isEmpty)) exitWith {
+    [_caller, _tent] call FUNC(cancel);
+    [LLSTRING(notEmpty), true] call ACEFUNC(common,displayText);
+};
+
 private _grassCutter = _tent getVariable [QGVAR(grassCutter), objNull];
 
 if (!isNull _grassCutter) then {
     deleteVehicle _grassCutter;
 };
+
+// Empty by now, or it has none
+deleteVehicle (_tent getVariable [QGVAR(container), objNull]);
 
 private _posASL = getPosASL _tent;
 private _vectorDirAndUp = [vectorDir _tent, vectorUp _tent];

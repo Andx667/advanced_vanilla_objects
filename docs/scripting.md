@@ -15,6 +15,7 @@ Every action raises a CBA event after it was used. They are raised with `CBA_fnc
 | `avo_antennas_disconnected` | `[antenna, unit, radioId]` | A radio is disconnected from one of them. `radioId` is `""` when ACRE does not tell it |
 | `avo_tents_setUp` | `[tent, unit, item]` | A tent is set up from a tent item |
 | `avo_tents_packedUp` | `[classname, posASL, [vectorDir, vectorUp], unit, item]` | A tent is packed up. The tent is deleted by then, its class and place are given instead |
+| `avo_tents_inventoryOpened` | `[tent, unit]` | The inventory of a tent is opened |
 | `avo_weather_read` | `[object, unit, windOnly]` | Weather data is read at a weather station, or the wind at a windsock (`windOnly` is `true`) |
 
 `avo_antennas_connected` and `avo_antennas_disconnected` are relayed from ACRE's ground spike antenna events (`acre_sys_gsa_connectGsa` and `acre_sys_gsa_disconnectGsa`), only for the antennas of AVO.
@@ -64,9 +65,17 @@ There are no "before" events, actions cannot be cancelled.
 | Variable | Object | Description |
 | --- | --- | --- |
 | `avo_tents_canPackUp` | Placed tent | Set to `false` to prevent packing up this tent. Default `true` |
+| `avo_tents_container` | Placed tent | The invisible container that is the inventory of the tent, `objNull` until the inventory has been opened for the first time. Read only, a tent cannot be packed up while it has items in it |
 
 ```sqf
 _tent setVariable ["avo_tents_canPackUp", false, true];
+```
+
+The container is not deleted with the tent when a script or Zeus deletes it, only when the tent is packed up. Delete it as well:
+
+```sqf
+deleteVehicle (_tent getVariable ["avo_tents_container", objNull]);
+deleteVehicle _tent;
 ```
 
 ## Adding tents

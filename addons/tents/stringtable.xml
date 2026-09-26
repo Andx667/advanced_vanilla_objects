@@ -17,6 +17,14 @@
             <English>Enable tents</English>
             <German>Zelte aktivieren</German>
         </Key>
+        <Key ID="STR_avo_tents_Setting_Inventory_Description">
+            <English>Placed tents have an inventory that is opened from the interaction menu. A tent with items in it cannot be packed up. A tent that already has an inventory keeps it when this is turned off.</English>
+            <German>Aufgestellte Zelte haben ein Inventar, das über das Interaktionsmenü geöffnet wird. Ein Zelt mit Gegenständen darin kann nicht abgebaut werden. Ein Zelt, das bereits ein Inventar hat, behält es, wenn dies ausgeschaltet wird.</German>
+        </Key>
+        <Key ID="STR_avo_tents_Setting_Inventory_DisplayName">
+            <English>Tent inventory</English>
+            <German>Zeltinventar</German>
+        </Key>
         <Key ID="STR_avo_tents_a">
             <English>Tent (A-Frame)</English>
             <German>Zelt (A-Form)</German>
@@ -24,6 +32,10 @@
         <Key ID="STR_avo_tents_abort">
             <English>Aborted</English>
             <German>Abgebrochen</German>
+        </Key>
+        <Key ID="STR_avo_tents_container">
+            <English>Tent inventory</English>
+            <German>Zeltinventar</German>
         </Key>
         <Key ID="STR_avo_tents_description">
             <English>Packed tent. Set it up from the ACE self-interaction menu under Equipment.</English>
@@ -33,9 +45,21 @@
             <English>Tent (Dome)</English>
             <German>Zelt (Kuppel)</German>
         </Key>
+        <Key ID="STR_avo_tents_group">
+            <English>Tent</English>
+            <German>Zelt</German>
+        </Key>
         <Key ID="STR_avo_tents_hintErrorNoSpace">
             <English>The tent cannot be placed here</English>
             <German>Das Zelt kann hier nicht aufgebaut werden</German>
+        </Key>
+        <Key ID="STR_avo_tents_notEmpty">
+            <English>The tent has to be empty to be packed up</English>
+            <German>Das Zelt muss zum Abbauen leer sein</German>
+        </Key>
+        <Key ID="STR_avo_tents_openInventory">
+            <English>Open Inventory</English>
+            <German>Inventar öffnen</German>
         </Key>
         <Key ID="STR_avo_tents_packUp">
             <English>Pack Up Tent</English>

@@ -3,7 +3,8 @@
  * Author: Andx
  * Registers the ACE interactions for tents. Every CfgWeapons item that names a tent
  * object in its `avo_tents_object` property gets a "set up" self-interaction (shown while
- * the item is carried), and every tent object gets a "pack up" interaction.
+ * the item is carried), and every tent object gets a sub menu with "open inventory" and
+ * "pack up".
  *
  * Arguments:
  * None
@@ -82,6 +83,48 @@ private _setUp = [
     ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment", QGVAR(setUp)], _child, true] call ACEFUNC(interact_menu,addActionToClass);
 } forEach GVAR(tentItems);
 
+// Where the actions are depends on the size of the tent, see avo_common_fnc_interactionPosition
+private _position = {[_target] call EFUNC(common,interactionPosition)};
+private _distance = 6;
+
+// Pack up and the inventory can be shown together, so they are in one sub menu, or their
+// interaction points would be at the same place. The sub menu is only shown when one of them is.
+private _group = [
+    QGVAR(group),
+    LLSTRING(group),
+    "",
+    {},
+    {GVAR(enabled)},
+    {},
+    [],
+    _position,
+    _distance
+] call ACEFUNC(interact_menu,createAction);
+
+private _openInventory = [
+    QGVAR(openInventory),
+    LLSTRING(openInventory),
+    "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa",
+    {
+        params ["_target", "_player"];
+
+        [_target, _player] call FUNC(openInventory);
+    },
+    {
+        params ["_target", "_player"];
+
+        // A tent that has an inventory keeps it when the setting is turned off, or what is in it could not be reached
+        GVAR(enabled)
+        && {isNull objectParent _player}
+        && {GVAR(inventory) || {!isNull (_target getVariable [QGVAR(container), objNull])}}
+        && {!(_target getVariable [QGVAR(inUse), false])}
+    },
+    {},
+    [],
+    _position,
+    _distance
+] call ACEFUNC(interact_menu,createAction);
+
 private _packUp = [
     QGVAR(packUp),
     LLSTRING(packUp),
@@ -98,10 +141,14 @@ private _packUp = [
     },
     {},
     [],
-    {[_target] call EFUNC(common,interactionPosition)},
-    6
+    _position,
+    _distance
 ] call ACEFUNC(interact_menu,createAction);
 
 {
-    [_x select 1, 0, [], _packUp] call ACEFUNC(interact_menu,addActionToClass);
+    private _class = _x select 1;
+
+    [_class, 0, [], _group] call ACEFUNC(interact_menu,addActionToClass);
+    [_class, 0, [QGVAR(group)], _openInventory] call ACEFUNC(interact_menu,addActionToClass);
+    [_class, 0, [QGVAR(group)], _packUp] call ACEFUNC(interact_menu,addActionToClass);
 } forEach GVAR(tentItems);

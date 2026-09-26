@@ -13,6 +13,15 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+### Added
+
+- Tents - placed tents have an inventory, opened with "Open Inventory" (invisible container attached to the tent, event `avo_tents_inventoryOpened`). A tent with items in it cannot be packed up. The new "Tent inventory" setting turns it off for tents that have none yet
+
+### Changed
+
+- Tents - "Pack Up Tent" is now in a "Tent" sub menu together with "Open Inventory"
+- Tents - the packed tent items have a picture of their tent in the inventory (solar tents in their four colours, dome tent, A-frame tent) instead of a backpack
+
 ## [1.2.0] - 2026-09-26
 
 ### Added
