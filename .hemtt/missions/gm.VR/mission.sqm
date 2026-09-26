@@ -132,7 +132,6 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this animateSource [""antennaMast_01_unhide"", 0, true];";
 				name="shelter_bare";
 			};
 			id=3;

@@ -1,6 +1,10 @@
 // Test for the antennas_gm addon: two command shelters, one with the antenna mast and one without.
 // Runs the extend and retract cycle of the antenna and logs the animation phases to the RPT
 // (search for "AVO-GM"). The ACE actions ("Antenna" on the shelter) are for you to try.
+// The second shelter has no antenna. Done here, the init line of the object did not take (the antenna
+// comes back with its initial phase).
+shelter_bare animateSource ["antennaMast_01_unhide", 0, true];
+
 private _log = {
     params ["_step"];
     {
