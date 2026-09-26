@@ -10,5 +10,5 @@ action			= "https://github.com/Andx667/advanced_vanilla_objects";	// Website URL
 overview		= "Fills vanilla objects with the functions they should have had.";	// Supports structured text
 hideName		= 0;						// Hide the extension name
 hidePicture		= 0;						// Hide the extension menu
-dlcColor[]		= { 0.23, 0.39, 0.30, 1 };	// Color used for DLC stripes and backgrounds (RGBA)
+dlcColor[]		= { 0.53, 0.81, 0.92, 1 };	// Color used for DLC stripes and backgrounds (RGBA)
 logoSmall		= "img\icon_ca.paa";			// Display in creative lists, next to the entities added by the mod
