@@ -6,11 +6,9 @@ if (isNil QTFARFUNC(antennas,initRadioTower) || {isNil QTFARFUNC(antennas,delete
     WARNING("TFAR radio tower functions not found, TFAR antenna registration disabled");
 };
 
-// Rugged terminals are covered here (not with Extended_InitPost/Deleted_EventHandlers alone)
-// because they can be switched on and off after they exist, unlike the satellite dishes and
-// omni-directional antennas. avo_antennas_activated/deactivated also cover the antenna mast of
-// the Global Mobilization command shelters (avo_antennas_gm), without this addon needing to know
-// about that class itself.
+// Rugged terminals and the GM antenna mast are covered here in addition to
+// Extended_InitPost/Deleted_EventHandlers (CfgEventHandlers.hpp), because they can be switched on
+// and off after they exist, unlike the satellite dishes and omni-directional antennas.
 [QEGVAR(antennas,activated), {
     params ["_terminal"];
     [_terminal] call FUNC(registerTower);

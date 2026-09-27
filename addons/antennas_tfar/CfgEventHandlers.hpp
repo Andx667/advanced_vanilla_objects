@@ -12,9 +12,11 @@ class Extended_PostInit_EventHandlers {
 
 // Satellite dishes and omni-directional antennas have no on/off switch, so they register as a
 // TFAR radio tower as soon as they exist and deregister when deleted. Mounted dishes are included
-// too: TFAR only cares about the position, not whether ACE can reach it. Rugged terminals only
-// register while active, including a terminal already active when a client joins (clientInit
-// runs for those too), see the avo_antennas_activated/deactivated events in XEH_postInit.sqf.
+// too: TFAR only cares about the position, not whether ACE can reach it. Rugged terminals and the
+// GM command shelter antenna mast only register while active, including one already active when a
+// client joins (clientInit runs for those too, closing the JIP gap the avo_antennas_activated/
+// deactivated events in XEH_postInit.sqf alone would leave). gm_shelteraceI_command_base simply
+// does not exist without Global Mobilization, so this is harmless without it.
 class Extended_InitPost_EventHandlers {
     class Land_SatelliteAntenna_01_F {
         class ADDON {
@@ -36,6 +38,11 @@ class Extended_InitPost_EventHandlers {
             clientInit = QUOTE(if ([_this select 0] call EFUNC(antennas,isActive)) then {[_this select 0] call FUNC(registerTower)});
         };
     };
+    class gm_shelteraceI_command_base {
+        class ADDON {
+            clientInit = QUOTE(if ([_this select 0] call EFUNC(antennas,isActive)) then {[_this select 0] call FUNC(registerTower)});
+        };
+    };
 };
 
 class Extended_Deleted_EventHandlers {
@@ -49,6 +56,9 @@ class Extended_Deleted_EventHandlers {
         ADDON = QUOTE([_this select 0] call FUNC(deregisterTower));
     };
     class RuggedTerminal_Base_F {
+        ADDON = QUOTE([_this select 0] call FUNC(deregisterTower));
+    };
+    class gm_shelteraceI_command_base {
         ADDON = QUOTE([_this select 0] call FUNC(deregisterTower));
     };
 };
