@@ -2,6 +2,8 @@
 workshop = [
     "450814997",  # CBA_A3
     "463939057",  # ACE3
+    "1779063631", # Zeus Enhanced
+    "3499977893", # Advanced Developer Tools
 ]
 # Test mission with the vanilla objects the addons add functions to, in .hemtt/missions/
 mission = "test.VR"

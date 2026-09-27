@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6,8,-20};
-		dir[]={0,-0.25,1};
-		up[]={0,1,0};
-		aside[]={1,0,0};
+		pos[]={1.0734704,9.5940132,-9.3747292};
+		dir[]={-0.03024835,-0.60546643,0.83366388};
+		up[]={-0.013545339,0.92760146,0.37332079};
+		aside[]={0.99934703,-6.8215513e-08,0.036258534};
 	};
 };
 binarizationWanted=0;
@@ -40,11 +40,15 @@ class AddonsMetaData
 		class Item1
 		{
 			className="gm_objects_container_shelterace_ge_army_shelterace";
-			name="Global Mobilization - Shelters";
-			author="Global Mobilization Team";
-			url="https://www.globalmobilization.com";
+			name="gm_objects_container_shelterace_ge_army_shelterace";
+			author="Global Mobilization";
+			url="global-mobilization.com";
 		};
 	};
+};
+dlcs[]=
+{
+	"gm"
 };
 randomSeed=1;
 class ScenarioData
@@ -65,7 +69,6 @@ class Mission
 		forecastLightnings=0.1;
 		wavesForced=1;
 		windForced=1;
-		year=1985;
 		day=28;
 		hour=12;
 		minute=0;
@@ -110,7 +113,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={-6,5,5};
+				position[]={-6,6.9962831,5};
 			};
 			side="Empty";
 			flags=4;
@@ -126,16 +129,107 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6,5,5};
+				position[]={6,6.9962831,5};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				name="shelter_bare";
+				textures="gm_ge_wdl";
 			};
 			id=3;
 			type="gm_ge_army_shelteraceI_command";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="gm_ge_wdl";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=4;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="antennamast_01_elev_trigger";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0;
+												};
+											};
+											class Item2
+											{
+												class data
+												{
+													singleType="STRING";
+													value="antennaMast_01_unhide";
+												};
+											};
+											class Item3
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=0;
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
