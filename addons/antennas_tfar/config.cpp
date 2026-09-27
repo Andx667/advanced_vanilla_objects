@@ -8,10 +8,13 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "avo_antennas",
-            "tfar_antennas"
+            "tfar_antennas",
+            "A3_Props_F_Enoch_Military_Camps",
+            "A3_Props_F_Enoch_Military_Equipment",
+            "A3_Props_F_Decade_Objectives"
         };
         // Skip this addon instead of erroring when TFAR is missing. avo_antennas is a
-        // requirement too, so it is skipped as well when ACRE, ACE or Contact content is missing.
+        // requirement too, so it is skipped as well when ACE or Contact content is missing.
         skipWhenMissingDependencies = 1;
         units[] = {};
         weapons[] = {};
@@ -20,3 +23,4 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgVehicles.hpp"
