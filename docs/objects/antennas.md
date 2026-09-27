@@ -1,6 +1,6 @@
 # Antennas (`avo_antennas`)
 
-Activates the vanilla antennas via the ACE interaction menu, the base for a comms mod to connect to. `avo_antennas` on its own is comms-agnostic: on its own it only switches the Rugged terminals on and off, ACRE2 (`avo_antennas_acre`) or TFAR (`avo_antennas_tfar`) add what happens once they are.
+The vanilla antennas as the base for a comms mod. The satellite dishes and omni-directional antennas are always active, only the Rugged communications terminals are switched on and off, via the ACE interaction menu. `avo_antennas` on its own is comms-agnostic, that switch is all it adds; ACRE2 (`avo_antennas_acre`) or TFAR (`avo_antennas_tfar`) add what happens with an active antenna.
 
 The mounted satellite dishes (`SatelliteAntenna_01_Mounted_*`, `SatelliteAntenna_01_Small_Mounted_*`) have no actions, they are out of reach.
 
@@ -12,7 +12,7 @@ With optional addon `avo_antennas_acre`, connect a compatible ACRE radio (PRC-11
 
 ### TFAR
 
-With optional addon `avo_antennas_tfar` and [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio), every satellite dish and omni-directional antenna registers itself as a TFAR radio tower as soon as it exists (mounted dishes too), and every Rugged terminal or GM antenna mast does the same while it is active. TFAR has no concept of connecting a specific radio, unlike ACRE's ground spike antenna: everyone within range of an active tower gets the boost, whether or not they have a radio "connected". The range is a CBA setting, see [Usage](../usage.md#settings).
+With optional addon `avo_antennas_tfar` and [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio), every satellite dish and omni-directional antenna registers itself as a TFAR radio tower as soon as it exists (mounted dishes too), and every Rugged terminal or GM antenna mast does the same while it is active. TFAR has no concept of connecting a specific radio, unlike ACRE's ground spike antenna: everyone within range of an active tower gets the boost, whether or not they have a radio "connected". The range is a CBA setting, see [Usage](../usage.md#settings). Changing it, or turning the towers off, applies to every antenna right away.
 
 `avo_antennas_acre` and `avo_antennas_tfar` do not require each other, and neither requires the other's comms mod: install either, both, or neither.
 
