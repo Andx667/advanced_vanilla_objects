@@ -14,7 +14,7 @@
  * Antenna position <ARRAY> (ASL)
  *
  * Example:
- * [cursorObject, 0] call avo_antennas_fnc_antennaPos
+ * [cursorObject, 0] call avo_antennas_acre_fnc_antennaPos
  *
  * Public: No
  */

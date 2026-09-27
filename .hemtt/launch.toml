@@ -26,3 +26,9 @@ dlc = [
     "gm",
 ]
 mission = "gm.VR"
+
+[tfar]
+extends = "default"
+workshop = [
+    "894678801", # Task Force Arrowhead Radio
+]

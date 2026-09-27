@@ -11,14 +11,14 @@ Every action raises a CBA event after it was used. They are raised with `CBA_fnc
 | `avo_animations_changed` | `[object, control, changes, unit]` | An animation action is used, see [below](#avo_animations_changed) |
 | `avo_antennas_activated` | `[terminal, unit]` | A Rugged terminal is activated, or an antenna mast extended |
 | `avo_antennas_deactivated` | `[terminal, unit]` | A Rugged terminal is deactivated, or an antenna mast retracted |
-| `avo_antennas_connected` | `[antenna, radioId, unit]` | A radio is connected to one of the antennas or terminals |
+| `avo_antennas_connected` | `[antenna, radioId, unit]` | A radio is connected to one of the antennas or terminals (needs `avo_antennas_acre`) |
 | `avo_antennas_disconnected` | `[antenna, unit, radioId]` | A radio is disconnected from one of them. `radioId` is `""` when ACRE does not tell it |
 | `avo_tents_setUp` | `[tent, unit, item]` | A tent is set up from a tent item |
 | `avo_tents_packedUp` | `[classname, posASL, [vectorDir, vectorUp], unit, item]` | A tent is packed up. The tent is deleted by then, its class and place are given instead |
 | `avo_tents_inventoryOpened` | `[tent, unit]` | The inventory of a tent is opened |
 | `avo_weather_read` | `[object, unit, windOnly]` | Weather data is read at a weather station, or the wind at a windsock (`windOnly` is `true`) |
 
-`avo_antennas_connected` and `avo_antennas_disconnected` are relayed from ACRE's ground spike antenna events (`acre_sys_gsa_connectGsa` and `acre_sys_gsa_disconnectGsa`), only for the antennas of AVO.
+`avo_antennas_connected` and `avo_antennas_disconnected` are raised by `avo_antennas_acre`, relayed from ACRE's ground spike antenna events (`acre_sys_gsa_connectGsa` and `acre_sys_gsa_disconnectGsa`), only for the antennas of AVO; they are not raised at all without that addon. With TFAR (optional addon `avo_antennas_tfar`), `avo_antennas_activated`/`avo_antennas_deactivated` (raised by the comms-agnostic `avo_antennas`) are what register or remove the TFAR radio tower instead; TFAR has no per-radio connection to relay.
 
 There are no "before" events, actions cannot be cancelled.
 
@@ -146,4 +146,5 @@ The position of the top centre of an object's bounding box, in ASL. Follows the 
 | `avo_antennas_activeSources[]` | `CfgVehicles` | Animation sources that switch an antenna object on, used by the Rugged communications terminals and the antenna masts of the GM shelters. The first one marks the state and has to be above 0 |
 | `avo_antennas_activePhase` | `CfgVehicles` | Phase the active sources go to when the antenna is switched on (default `100`) |
 | `avo_antennas_requiredSources[]` | `CfgVehicles` | Animation sources that show the antenna of an object where it is an option. The object has no antenna actions while one of them is 0 |
+| `AcreComponents` | `CfgVehicles` | ACRE ground spike antenna component, set by `avo_antennas_acre`/`avo_antennas_gm_acre` together with `acre_antennaPosFnc` |
 | `avo_tents_object` | `CfgWeapons` | Tent object class an item sets up, see [Adding tents](#adding-tents) |

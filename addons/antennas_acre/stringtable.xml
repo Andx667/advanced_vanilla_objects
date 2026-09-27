@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="antennas_acre">
+        <Key ID="STR_avo_antennas_acre_Setting_Enabled_Description">
+            <English>Allows connecting ACRE radios to the vanilla Contact satellite antennas, omni-directional antennas, Rugged terminals and other antenna masts. Existing connections can still be disconnected.</English>
+            <German>Erlaubt es, ACRE-Funkgeräte mit den Contact-Satellitenantennen, Rundstrahlantennen, Rugged-Terminals und anderen Antennenmasten zu verbinden. Bestehende Verbindungen können weiterhin getrennt werden.</German>
+        </Key>
+        <Key ID="STR_avo_antennas_acre_Setting_Enabled_DisplayName">
+            <English>Enable ACRE antenna connections</English>
+            <German>ACRE-Antennenverbindungen aktivieren</German>
+        </Key>
+        <Key ID="STR_avo_antennas_acre_connect">
+            <English>Connect Radio</English>
+            <German>Funkgerät verbinden</German>
+        </Key>
+        <Key ID="STR_avo_antennas_acre_disconnect">
+            <English>Disconnect Radio</English>
+            <German>Funkgerät trennen</German>
+        </Key>
+    </Package>
+</Project>

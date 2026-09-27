@@ -12,7 +12,11 @@ The action is where you expect it, depending on the size of the object:
 
 ## Antennas
 
-Look at a satellite dish or an omni-directional antenna and choose **Connect Radio**, then the radio. **Disconnect Radio** removes the link. The link drops when the radio is more than 10 m from the antenna. Rugged communications terminals have a **Terminal** sub menu, they have to be activated with **Activate Terminal** first.
+Rugged communications terminals have a **Terminal** sub menu, they have to be activated with **Activate Terminal** first. On their own, that is all `avo_antennas` does; ACRE2 or TFAR add what happens once an antenna or terminal is active.
+
+With ACRE2 (optional addon `avo_antennas_acre`), look at a satellite dish or an omni-directional antenna and choose **Connect Radio**, then the radio. **Disconnect Radio** removes the link. The link drops when the radio is more than 10 m from the antenna.
+
+With [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio) instead (optional addon `avo_antennas_tfar`), there is nothing to connect: TFAR has no concept of linking one specific radio to an antenna, so every antenna and every active terminal simply boosts everyone within range, the same way TFAR's own radio towers do.
 
 See [Antennas](objects/antennas.md).
 
@@ -39,7 +43,9 @@ Each addon has an **Enable ...** checkbox under its own category (**Advanced Van
 
 | Category | Setting |
 | --- | --- |
-| Antennas | Enable antenna connections |
+| Antennas | Enable antenna activation |
+| Antennas (ACRE) | Enable ACRE antenna connections |
+| Antennas (TFAR) | Enable TFAR radio towers, Radio tower range (m) |
 | Weather | Enable weather station readout |
 | Tents | Enable tents, Build time, Tent inventory |
 | Animations | Enable animation actions |

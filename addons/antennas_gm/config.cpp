@@ -11,7 +11,9 @@ class CfgPatches {
             "gm_objects_container_shelterace_ge_army_shelterace"
         };
         // Skip this addon instead of erroring when Global Mobilization is missing. avo_antennas is a
-        // requirement too, so it is skipped as well when ACRE, ACE or Contact content is missing.
+        // requirement too, so it is skipped as well when ACE or Contact content is missing. This
+        // addon is comms-agnostic (extend/retract the mast only), see avo_antennas_gm_acre for the
+        // ACRE radio connection.
         skipWhenMissingDependencies = 1;
         units[] = {};
         weapons[] = {};
@@ -20,5 +22,4 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
-#include "CfgAcreComponents.hpp"
 #include "CfgVehicles.hpp"

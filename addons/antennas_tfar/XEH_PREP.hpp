@@ -1,0 +1,2 @@
+PREP(deregisterTower);
+PREP(registerTower);

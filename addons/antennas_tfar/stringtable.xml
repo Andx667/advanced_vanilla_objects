@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="avo">
+    <Package name="antennas_tfar">
+        <Key ID="STR_avo_antennas_tfar_Setting_Enabled_Description">
+            <English>Registers the vanilla Contact antennas and Rugged terminals of avo_antennas (and the antenna mast of the GM command shelters, if loaded) as TFAR radio towers while they are active. Unlike ACRE, no radio has to be connected, everyone nearby gets the boost.</English>
+            <German>Registriert die Contact-Antennen und Rugged-Terminals von avo_antennas (und den Antennenmast der GM-Gefechtsstände, falls geladen) als TFAR-Funktürme, solange sie aktiv sind. Anders als bei ACRE muss dafür kein Funkgerät verbunden werden, jeder in der Nähe profitiert.</German>
+        </Key>
+        <Key ID="STR_avo_antennas_tfar_Setting_Enabled_DisplayName">
+            <English>Enable TFAR radio towers</English>
+            <German>TFAR-Funktürme aktivieren</German>
+        </Key>
+        <Key ID="STR_avo_antennas_tfar_Setting_Range_Description">
+            <English>Range of the TFAR boost around an active antenna or terminal, in meters.</English>
+            <German>Reichweite der TFAR-Verstärkung um eine aktive Antenne oder ein aktives Terminal, in Metern.</German>
+        </Key>
+        <Key ID="STR_avo_antennas_tfar_Setting_Range_DisplayName">
+            <English>Radio tower range (m)</English>
+            <German>Reichweite des Funkturms (m)</German>
+        </Key>
+    </Package>
+</Project>
