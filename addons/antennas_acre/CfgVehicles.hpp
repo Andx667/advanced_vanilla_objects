@@ -2,10 +2,13 @@
 // classes below are the bases of every Contact variant (Olive/Black/Sand, small, mounted).
 // acre_antennaPosFnc sits on the object class itself, that is where ACRE's findAntenna reads it.
 // The Rugged terminal classes are already fully defined in avo_antennas (activeSources and the
-// rest), they are reopened here only to add the ACRE-specific properties.
+// rest), they are reopened here only to add the ACRE-specific properties. Every class keeps its
+// vanilla parent: a class reopened without one loses its inheritance ("Updating base class
+// 'RuggedTerminal_Base_F'->''" in the RPT), the editor attributes and animation sources with it.
 class CfgVehicles {
     class Items_base_F;
     class NonStrategic;
+    class RuggedTerminal_Base_F;
 
     class Land_SatelliteAntenna_01_F: Items_base_F {
         acre_antennaPosFnc = QFUNC(antennaPos);
@@ -27,19 +30,19 @@ class CfgVehicles {
         };
     };
 
-    class RuggedTerminal_01_communications_F {
+    class RuggedTerminal_01_communications_F: RuggedTerminal_Base_F {
         acre_antennaPosFnc = QFUNC(antennaPos);
         class AcreComponents {
             componentName = QGVAR(satDish);
         };
     };
-    class RuggedTerminal_02_communications_F {
+    class RuggedTerminal_02_communications_F: RuggedTerminal_Base_F {
         acre_antennaPosFnc = QFUNC(antennaPos);
         class AcreComponents {
             componentName = QGVAR(satDish);
         };
     };
-    class RuggedTerminal_01_communications_hub_F {
+    class RuggedTerminal_01_communications_hub_F: RuggedTerminal_Base_F {
         acre_antennaPosFnc = QFUNC(antennaPos);
         class AcreComponents {
             componentName = QGVAR(satDish);
