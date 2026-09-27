@@ -15,11 +15,14 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
+- Antennas - TFAR compatibility (optional addon `avo_antennas_tfar`): the satellite dishes, omni-directional antennas, Rugged terminals and GM antenna masts register as TFAR radio towers while active, so everyone nearby gets the range boost without connecting a specific radio, skipped without TFAR
+- Antennas - new optional addons `avo_antennas_acre` and `avo_antennas_gm_acre` carry the ACRE radio connection that used to be part of `avo_antennas`/`avo_antennas_gm`, see Changed
 - Tents - placed tents have an inventory, opened with "Open Inventory" (invisible container attached to the tent, event `avo_tents_inventoryOpened`). A tent with items in it cannot be packed up, and the server checks that when the pack up is done. Only the tents that can be set up have an inventory, not the big decon, connector and medical tents. The new "Tent inventory" setting turns it off for tents that have none yet
 - Tents - the packed tents are listed in Eden and Zeus (Equipment, Items) and can be picked up from the ground, as `Item_` and the item class
 
 ### Changed
 
+- Antennas - `avo_antennas` and `avo_antennas_gm` no longer require ACRE2, they only switch the Rugged terminals/GM antenna masts on and off now. Connecting an ACRE radio moved to the new `avo_antennas_acre`/`avo_antennas_gm_acre` addons, so ACRE and TFAR support no longer pull each other in through `avo_antennas`. The "Enable antenna connections" setting is now "Enable antenna activation" (`avo_antennas`) plus a separate "Enable ACRE antenna connections" (`avo_antennas_acre`)
 - Tents - "Pack Up Tent" is now in a "Tent" sub menu together with "Open Inventory"
 - Tents - the packed tent items have a picture of their tent in the inventory (solar tents in their four colours, dome tent, A-frame tent) instead of a backpack
 

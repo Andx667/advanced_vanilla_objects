@@ -7,14 +7,17 @@ class CfgPatches {
         url = "https://github.com/Andx667/advanced_vanilla_objects";
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "avo_common",
+            "avo_antennas",
+            "acre_sys_antenna",
+            "acre_sys_gsa",
+            "acre_ace_interact",
             "A3_Props_F_Enoch_Military_Camps",
             "A3_Props_F_Enoch_Military_Equipment",
             "A3_Props_F_Decade_Objectives"
         };
-        // Skip this addon instead of erroring when ACE or Contact content is missing. This addon
-        // is comms-agnostic (no ACRE or TFAR dependency of its own), see avo_antennas_acre and
-        // avo_antennas_tfar.
+        // Skip this addon instead of erroring when ACRE, ACE or Contact content is missing.
+        // avo_antennas is a requirement too, so it is skipped as well when ACE or Contact
+        // content is missing.
         skipWhenMissingDependencies = 1;
         units[] = {};
         weapons[] = {};
@@ -23,4 +26,5 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgAcreComponents.hpp"
 #include "CfgVehicles.hpp"

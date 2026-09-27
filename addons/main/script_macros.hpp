@@ -25,3 +25,9 @@
 
 #define ACREPATHTOF(component,path) \idi\acre\addons\component\path
 #define QACREPATHTOF(component,path) QUOTE(ACREPATHTOF(component,path))
+
+// --- TFAR reference macros ---
+#define TFAR_PREFIX tfar
+
+#define TFARFUNC(component,function) TRIPLES(DOUBLES(TFAR_PREFIX,component),fnc,function)
+#define QTFARFUNC(component,function) QUOTE(TFARFUNC(component,function))

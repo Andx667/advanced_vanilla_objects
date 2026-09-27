@@ -7,12 +7,8 @@ class CfgVehicles {
     class gm_shelteraceI_base;
 
     class gm_shelteraceI_command_base: gm_shelteraceI_base {
-        acre_antennaPosFnc = QEFUNC(antennas,antennaPos);
         EGVAR(antennas,requiredSources)[] = {"antennaMast_01_unhide"};
         EGVAR(antennas,activeSources)[] = {"antennamast_01_elev_trigger", "antennamast_01_elev_source"};
         EGVAR(antennas,activePhase) = 1;
-        class AcreComponents {
-            componentName = QGVAR(mast);
-        };
     };
 };
