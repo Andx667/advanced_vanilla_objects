@@ -23,7 +23,6 @@ workshop = [
 
 # Global Mobilization with ACRE, opens the GM test mission
 [gm]
-extends = "acre"
 dlc = [
     "gm",
 ]
