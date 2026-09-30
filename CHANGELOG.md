@@ -13,6 +13,8 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-09-30
+
 ### Added
 
 - Antennas - TFAR compatibility (optional addon `avo_antennas_tfar`): the satellite dishes, omni-directional antennas, Rugged terminals and GM antenna masts register as TFAR radio towers while active, so everyone nearby gets the range boost without connecting a specific radio, skipped without TFAR
