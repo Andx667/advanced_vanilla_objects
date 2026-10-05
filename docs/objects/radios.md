@@ -8,14 +8,11 @@ Look at the object and choose **FM Radio** (the name ArmaRadio gives its action)
 
 | Object | Classname |
 | --- | --- |
-| Motorboat, rescue boat, police boat | `C_Boat_Civil_01_F`, `C_Boat_Civil_01_rescue_F`, `C_Boat_Civil_01_police_F` |
 | Smartphone | `Land_MobilePhone_smart_F` |
 | Laptops | `Land_Laptop_F`, `Land_Laptop_unfolded_F`, `Land_Laptop_02_F`, `Land_Laptop_02_unfolded_F`, `Land_Laptop_03_*` |
 | Tablets (Helicopters, Apex) | `Land_Tablet_01_F`, `Land_Tablet_02_F`, `Land_Tablet_02_sand_F`, `Land_Tablet_02_black_F` |
 
 The laptops cover every variant derived from them: the closed and unfolded ones, the scripted, Intel and device laptops, and the olive, black and sand ones of Contact. A closed laptop plays like an open one.
-
-The motorboats are not new actions: they are derived from `Ship_F` and not `Boat_F`, so ArmaRadio did not count them as a radio, the addon only does that. ArmaRadio's own action reaches them. This needs a version of ArmaRadio that has the `live_radio_interface_hasRadio` config flag (from the radio expansion, October 2026); with an older version the boats get no action, the smartphone and the laptops work with any version.
 
 ## Without the DLCs
 
@@ -23,4 +20,4 @@ The addon only needs the base game. The tablets of the Helicopters (`Land_Tablet
 
 ## Other objects
 
-A mission can make any other object a radio with ArmaRadio's own Eden/Zeus module, like the satellite phone, the old mobile phone, the loudspeakers or the flat TV. The classes above are the ones that are a radio without it.
+A mission can make any other object a radio with ArmaRadio's own Eden/Zeus module, like the motorboats, the satellite phone, the old mobile phone, the loudspeakers or the flat TV. The classes above are the ones that are a radio without it.

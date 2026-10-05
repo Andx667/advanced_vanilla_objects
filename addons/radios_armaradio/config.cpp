@@ -12,9 +12,7 @@ class CfgPatches {
         requiredAddons[] = {
             "avo_common",
             "live_radio_interface",
-            "A3_Structures_F_Items_Electronics",
-            "A3_Structures_F_Civ_Accessories",
-            "A3_Boat_F_Gamma_Boat_Civil_01"
+            "A3_Structures_F_Items_Electronics"
         };
         // Skip this addon instead of erroring when ArmaRadio (Live Radio) is missing
         skipWhenMissingDependencies = 1;
