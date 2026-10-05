@@ -11,7 +11,7 @@ AVO follows the standard ACE-style addon layout: functionality is split across s
 | `avo_antennas_gm` | Optional: the antenna mast of the [Global Mobilization command shelters](objects/antennas.md#global-mobilization-command-shelters), skipped without Global Mobilization |
 | `avo_antennas_gm_acre` | Optional: connect an ACRE radio to the GM antenna mast, skipped without Global Mobilization and ACRE2 |
 | `avo_antennas_tfar` | Optional: registers the antennas and active terminals (and the GM antenna mast, if loaded) as [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio) radio towers, skipped without TFAR |
-| `avo_radios_armaradio` | Optional: more [radio objects](objects/radios.md) (boats, smartphone, tablets, laptops) for [ArmaRadio](https://github.com/BrettMayson/ArmaRadio), skipped without ArmaRadio |
+| `avo_radios_armaradio` | Optional: more [radio objects](objects/radios.md) (smartphone, tablets, laptops) for [ArmaRadio](https://github.com/BrettMayson/ArmaRadio), skipped without ArmaRadio |
 | `avo_weather` | [Weather](objects/weather.md): weather station and windsock readout |
 | `avo_tents` | [Tents](objects/tents.md): tent items, 3D placement, pack up |
 | `avo_tents_bwa3` | Optional: the BWA3 small tent, skipped without BWA3 |

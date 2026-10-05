@@ -13,9 +13,11 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-10-05
+
 ### Added
 
-- Radios - [ArmaRadio](https://github.com/BrettMayson/ArmaRadio) compatibility (optional addon `avo_radios_armaradio`):a smartphone, tablets and every laptop (base game, Argo and Contact) can play radio stations through an ACE action, skipped without ArmaRadio
+- Radios - [ArmaRadio](https://github.com/BrettMayson/ArmaRadio) compatibility (optional addon `avo_radios_armaradio`): the smartphone, the tablets (Helicopters and Apex) and every laptop (base game, Argo and Contact) can play radio stations through an ACE action, skipped without ArmaRadio
 
 ## [1.3.0] - 2026-09-30
 
