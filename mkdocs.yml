@@ -79,6 +79,7 @@ nav:
       - Antennas: objects/antennas.md
       - Weather: objects/weather.md
       - Tents: objects/tents.md
+      - Radios: objects/radios.md
       - Animations: objects/animations.md
   - Scripting & API: scripting.md
   - Compatibility: compatibility.md

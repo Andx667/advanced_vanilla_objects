@@ -15,6 +15,13 @@ workshop = [
     "751965892",  # ACRE2
 ]
 
+# Launched with `hemtt launch armaradio`
+[armaradio]
+extends = "default"
+workshop = [
+    "2172022102", # ArmaRadio (Live Radio)
+]
+
 [bwa3]
 extends = "default"
 workshop = [
