@@ -16,6 +16,7 @@ Optional, each one is needed by a single addon only:
 | --- | --- |
 | [ACRE2](https://github.com/IDI-Systems/acre2) | Connecting a radio to the [Antennas](objects/antennas.md) (optional addon `avo_antennas_acre`) |
 | [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio) | The [Antennas](objects/antennas.md#tfar) as radio towers instead (optional addon `avo_antennas_tfar`) |
+| [ArmaRadio](https://steamcommunity.com/sharedfiles/filedetails/?id=2172022102) | More objects that play radio stations: [Radios](objects/radios.md) (optional addon `avo_radios_armaradio`) |
 | [BWA3](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537) | The BWA3 small tent of [Tents](objects/tents.md) |
 | [Global Mobilization](https://store.steampowered.com/app/1042220) | The antenna mast of the command shelters of [Antennas](objects/antennas.md#global-mobilization-command-shelters) (optional addon `avo_antennas_gm`, plus `avo_antennas_gm_acre` together with ACRE2 to connect a radio) |
 
@@ -49,6 +50,6 @@ hemtt build
 
 Run `hemtt check` to validate configs, scripts, and stringtables without producing a build.
 
-`hemtt launch` starts Arma with the mod and the test mission `.hemtt/missions/test.VR`, which has the objects of these docs placed in rows. `hemtt launch acre`, `hemtt launch bwa3`, `hemtt launch gm` and `hemtt launch tfar` also load ACRE2, BWA3, ACRE2 with Global Mobilization, or TFAR, the `gm` preset with the test mission `.hemtt/missions/gm.VR`.
+`hemtt launch` starts Arma with the mod and the test mission `.hemtt/missions/test.VR`, which has the objects of these docs placed in rows. `hemtt launch acre`, `hemtt launch armaradio`, `hemtt launch bwa3`, `hemtt launch gm` and `hemtt launch tfar` also load ACRE2, ArmaRadio, BWA3, ACRE2 with Global Mobilization, or TFAR, the `gm` preset with the test mission `.hemtt/missions/gm.VR`.
 
-`avo_antennas_acre`, `avo_antennas_gm_acre` and `avo_antennas_tfar` are skipped without their respective comms mod, so `hemtt launch` (no ACRE2, no TFAR) only exercises the comms-agnostic activation of `avo_antennas`/`avo_antennas_gm`.
+`avo_antennas_acre`, `avo_antennas_gm_acre`, `avo_antennas_tfar` and `avo_radios_armaradio` are skipped without their respective mod, so `hemtt launch` (no ACRE2, no TFAR) only exercises the comms-agnostic activation of `avo_antennas`/`avo_antennas_gm`.

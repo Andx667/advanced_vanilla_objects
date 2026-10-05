@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=517;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=148;
+		nextID=151;
 	};
 	class Camera
 	{
-		pos[]={-22.044689,65.706657,-85.886665};
+		pos[]={1.4715782,6.9691753,-14.516531};
 		dir[]={0.24940154,-0.51917177,0.81747144};
 		up[]={0.1514997,0.85466993,0.49657547};
 		aside[]={0.95647621,7.4505806e-09,-0.29181036};
@@ -32,7 +32,6 @@ addons[]=
 	"ace_smallarms",
 	"ace_ballistics",
 	"A3_Weapons_F_Pistols_P07",
-	"acre_main",
 	"ace_goggles",
 	"ace_nightvision",
 	"A3_Weapons_F_Items",
@@ -41,7 +40,6 @@ addons[]=
 	"ace_chemlights",
 	"A3_Props_F_Exp_Military_Camps",
 	"A3_Props_F_Enoch_Military_Camps",
-	"avo_antennas_acre",
 	"A3_Props_F_Enoch_Military_Equipment",
 	"A3_Props_F_Decade_Objectives",
 	"avo_antennas",
@@ -56,13 +54,17 @@ addons[]=
 	"cba_xeh",
 	"A3_Props_F_Enoch_Military_Decontamination",
 	"A3_Props_F_Orange_Humanitarian_Supplies",
-	"A3_Props_F_Exp_A_Military_Equipment"
+	"A3_Props_F_Exp_A_Military_Equipment",
+	"A3_Structures_F_Items_Electronics",
+	"avo_radios_armaradio",
+	"A3_Structures_F_EPC_Civ_Accessories",
+	"ace_dragging"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=25;
+		items=26;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -107,134 +109,141 @@ class AddonsMetaData
 		};
 		class Item6
 		{
-			className="acre_main";
-			name="ACRE2 - Main";
-			author="ACRE2Team";
-			url="https://github.com/IDI-Systems/acre2";
-		};
-		class Item7
-		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item8
+		class Item7
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item9
+		class Item8
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item10
+		class Item9
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item11
+		class Item10
 		{
 			className="ace_chemlights";
 			name="ACE3 - Chemlights";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item11
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item12
 		{
 			className="A3_Props_F_Enoch";
 			name="Arma 3 Contact Platform - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
-		{
-			className="avo_antennas_acre";
-			name="Advanced Vanilla Objects - Antennas (ACRE)";
-			author="Andx";
-			url="https://github.com/Andx667/advanced_vanilla_objects";
-		};
-		class Item15
+		class Item13
 		{
 			className="A3_Props_F_Decade_Objectives";
 			name="A3_Props_F_Decade_Objectives";
 		};
-		class Item16
+		class Item14
 		{
 			className="avo_antennas";
 			name="Advanced Vanilla Objects - Antennas";
 			author="Andx";
 			url="https://github.com/Andx667/advanced_vanilla_objects";
 		};
-		class Item17
+		class Item15
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item16
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item17
 		{
 			className="A3_Props_F_AoW";
 			name="Arma 3 Art of War - Decorative and Mission ";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item18
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item19
 		{
 			className="A3_Structures_F_Orange";
 			name="Arma 3 Orange - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item20
 		{
 			className="A3_Props_F_Argo";
 			name="Arma 3 Malden - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item21
 		{
 			className="A3_Props_F_Orange";
 			name="Arma 3 Orange - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item22
 		{
 			className="A3_Props_F_Exp_A";
 			name="Arma 3 Nexus Update - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item23
+		{
+			className="avo_radios_armaradio";
+			name="Advanced Vanilla Objects - Radios (ArmaRadio)";
+			author="Andx";
+			url="https://github.com/Andx667/advanced_vanilla_objects";
+		};
+		class Item24
+		{
+			className="A3_Structures_F_EPC";
+			name="Arma 3 Win Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item25
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -276,7 +285,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=130;
+		items=133;
 		class Item0
 		{
 			dataType="Group";
@@ -289,7 +298,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={0,5.0014391,-15};
+						position[]={2.614625,5.0014391,-11.064271};
+						angles[]={0,2.9029758,-0};
 					};
 					side="West";
 					flags=7;
@@ -2347,6 +2357,51 @@ class Mission
 			};
 			id=147;
 			type="Land_DataTerminal_01_F";
+		};
+		class Item130
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2.0117836,5.9056578,-12.893634};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=148;
+			type="Land_MobilePhone_smart_F";
+			atlOffset=0.014119625;
+		};
+		class Item131
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3.2490463,6.0431504,-12.598228};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=149;
+			type="Land_Laptop_unfolded_F";
+		};
+		class Item132
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2.6478658,5.4435391,-12.780664};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=150;
+			type="Land_TablePlastic_01_F";
 		};
 	};
 };

@@ -9,6 +9,7 @@
 - Arma 3 Contact content
 - [ACRE2](https://github.com/IDI-Systems/acre2) (only for connecting a radio to the antennas)
 - [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio) (only for the antennas as radio towers)
+- [ArmaRadio](https://steamcommunity.com/sharedfiles/filedetails/?id=2172022102) (only for the extra radio objects)
 - [BWA3](https://steamcommunity.com/sharedfiles/filedetails/?id=1200127537) (only for the BWA3 tent)
 - [Global Mobilization](https://store.steampowered.com/app/1042220) (only for the antenna of the command shelters)
 
@@ -17,6 +18,7 @@ If a dependency of an addon is missing, that addon is skipped instead of throwin
 # Features
 
 - **Antennas** — the vanilla Contact satellite antennas and omni-directional antennas are always on, the Rugged communications terminals are activated first (with an ACE action or "Open terminal" in the editor). With ACRE2, connect a compatible radio (PRC-117F, PRC-152) to them via the ACE interaction menu, like ACRE's ground spike antenna: the antenna sits at the real tip of the model, so height matters for signal. The command shelters of Global Mobilization (needs GM) have an antenna mast that is extended the same way: extend it, then connect a radio. With TFAR instead of ACRE, they work as TFAR radio towers: no radio to connect, everyone nearby is boosted while the antenna or terminal is active. ACRE2 and TFAR are independent of each other, install either, both, or neither.
+- **Radios** — with ArmaRadio, play radio stations on more objects than it covers: the motorboats, the smartphone, the tablets and every laptop.
 - **Weather** — ACE action on the portable weather station (Contact) that reads precise weather data: wind at the anemometer, temperature, humidity, dew point, wind chill, heat index and pressure from ACE weather, plus overcast, rain and fog. The windsock has an action that reads the wind.
 - **Tents** — packed tent items (solar tents in four colours, dome tent, A-frame tent, and the BWA3 small tent with BWA3 loaded) that are set up with ACE's 3D placement. Placed tents of these classes have an inventory to store gear in, and can be packed up again with an ACE action once they are empty.
 - **Animations** — ACE actions for vanilla objects that have animations but no way to change them in the game (most only had editor attributes): drawers of the portable cabinets, office table and coffins, doors of the fridge, coffins and the decon, connector and medical tents, lids of laptops, computers and containers, transfer switch, portable server, data terminal antenna and flag pole. Actions only show for variants that have the animation. Solar panels (rotate and tilt) are a separate addon that is skipped when Advanced Equipment is loaded.
