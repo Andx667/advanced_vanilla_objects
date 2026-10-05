@@ -15,18 +15,7 @@ class CfgVehicles {
         live_radio_interface_hasRadio = 1;
     };
 
-    // The loudspeakers on a pole. They are a Static, not an item
-    class Land_Loudspeakers_F: NonStrategic {
-        live_radio_interface_hasRadio = 1;
-    };
-
     class Land_PortableLongRangeRadio_F: Items_base_F {
-        live_radio_interface_hasRadio = 1;
-    };
-    class Land_SatellitePhone_F: Items_base_F {
-        live_radio_interface_hasRadio = 1;
-    };
-    class Land_MobilePhone_old_F: Items_base_F {
         live_radio_interface_hasRadio = 1;
     };
     class Land_MobilePhone_smart_F: Items_base_F {

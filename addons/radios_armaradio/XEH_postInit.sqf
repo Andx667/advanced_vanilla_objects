@@ -27,11 +27,7 @@ private _action = [
 // is left out, it would show the action twice.
 private _classes = [
     "Land_PortableLongRangeRadio_F",
-    "Land_SatellitePhone_F",
-    "Land_MobilePhone_old_F",
     "Land_MobilePhone_smart_F",
-    "Land_Loudspeakers_F",
-    "Land_FlatTV_01_F",
     // Laptops. The unfolded one has the scripted, Intel and device variants, the 02 (Argo) has the
     // unfolded one and the 03 (Contact) has its colours and the closed ones.
     "Land_Laptop_F",
