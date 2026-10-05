@@ -12,7 +12,7 @@ The project is entirely open-source and any contributions are welcome — see [C
 ## Core Features
 
 - **[Antennas](objects/antennas.md)** — connect a compatible ACRE2 radio (PRC-117F, PRC-152) to the vanilla Contact satellite antennas, omni-directional antennas and Rugged communications terminals, the terminals once they are activated. The command shelters of Global Mobilization (needs GM) have an antenna mast that is extended the same way: extend it, then connect a radio. With TFAR instead of ACRE2, they work as radio towers: no radio to connect, everyone nearby is boosted while active.
-- **[Radios](objects/radios.md)** — with [ArmaRadio](https://github.com/BrettMayson/ArmaRadio), play radio stations on more objects: the motorboats, long range radio, phones, loudspeakers, flat TV and every laptop
+- **[Radios](objects/radios.md)** — with [ArmaRadio](https://github.com/BrettMayson/ArmaRadio), play radio stations on more objects: the motorboats, smartphone and every laptop
 - **[Weather](objects/weather.md)** — read precise weather data at the portable weather station, and the wind at the windsock
 - **[Tents](objects/tents.md)** — packed tent items that are set up with ACE's 3D placement, and an inventory and a pack up action on the placed tents
 - **[Animations](objects/animations.md)** — ACE actions for drawers, doors, lids, switches and more that could only be changed in the editor
