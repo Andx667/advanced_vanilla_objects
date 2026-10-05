@@ -34,7 +34,10 @@ private _classes = [
     "Land_Laptop_F",
     "Land_Laptop_unfolded_F",
     "Land_Laptop_02_F",
-    "Land_Laptop_03_base_F"
+    "Land_Laptop_03_base_F",
+    // Tablets. The 02 (Apex) has the sand and black ones.
+    "Land_Tablet_01_F",
+    "Land_Tablet_02_F"
 ] select {
     !isClass (configFile >> "CfgVehicles" >> _x >> "ACE_Actions" >> "ACE_MainActions" >> "live_radio_interface_open")
 };

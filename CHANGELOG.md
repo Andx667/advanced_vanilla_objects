@@ -15,7 +15,7 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ### Added
 
-- Radios - [ArmaRadio](https://github.com/BrettMayson/ArmaRadio) compatibility (optional addon `avo_radios_armaradio`): the motorboats (`Boat_Civil_01`, which ArmaRadio missed), smartphone and every laptop (base game, Argo and Contact) can play radio stations through an ACE action, skipped without ArmaRadio
+- Radios - [ArmaRadio](https://github.com/BrettMayson/ArmaRadio) compatibility (optional addon `avo_radios_armaradio`):a smartphone, tablets and every laptop (base game, Argo and Contact) can play radio stations through an ACE action, skipped without ArmaRadio
 
 ## [1.3.0] - 2026-09-30
 
