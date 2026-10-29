@@ -30,11 +30,11 @@ These mirror the checks run in CI (`.github/workflows/check.yml` and `validate.y
 
 ## Documentation
 
-The documentation is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) from the `docs` folder:
+The documentation is built with [Zensical](https://zensical.org/) from the `docs` folder:
 
 ```cmd
 pip install -r docs/requirements.txt
-mkdocs serve
+zensical serve
 ```
 
 Add a new object with its classnames to the page of its addon in `docs/objects/`, and a new event to [Scripting & API](scripting.md#events).
