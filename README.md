@@ -1,7 +1,7 @@
 # Advanced Vanilla Objects
 
 <p align="center">
-    <img src="img/AVO_logo_512.png" width="256" alt="Advanced Vanilla Objects Logo">
+    <img src="img/logo.png" width="256" alt="Advanced Vanilla Objects Logo">
 </p>
 
 <p align="center">
