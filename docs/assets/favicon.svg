@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<title>advanced-vanilla-objects</title>
+<style>.g{color:#161A1F;stroke:#161A1F}@media (prefers-color-scheme:dark){.g{color:#FFFFFF;stroke:#FFFFFF}}</style><g class="g" transform="translate(-112.00 -112.00) scale(3.68000)" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M36 144 L74 80 L112 144 Z"/>
+<path d="M64 144 L74 116 L84 144"/>
+<path d="M126 144 L144 62 L162 144"/>
+<path d="M136 98 H152 M132 120 H156 M136 98 L156 120 M152 98 L132 120 M140 80 H148"/>
+<path d="M144 62 V50 M136 46 L144 54 L152 46"/>
+<path d="M50 62 H96 A11 11 0 0 0 90 42 A15 15 0 0 0 62 42 A10 10 0 0 0 50 62 Z"/>
+</g>
+</svg>
