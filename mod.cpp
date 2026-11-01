@@ -1,7 +1,7 @@
 name			= "Advanced Vanilla Objects v0.0.0";	// Name of your mod
 author			= "Andx";					// Affects Arma 3 Launcher, when the mod are loaded as local
-logo			= "img\icon_ca.paa";			// Logo displayed in the main menu
-logoOver		= "img\icon_ca.paa";			// When the mouse is over, in the main menu
+logo			= "img\icon_512_ca.paa";			// Logo displayed in the main menu
+logoOver		= "img\icon_512_ca.paa";			// When the mouse is over, in the main menu
 tooltip			= "Advanced Vanilla Objects";
 tooltipOwned	= "Advanced Vanilla Objects";			// Tool tip displayed when the mouse is left over, in the main menu
 picture			= "img\logo_ca.paa";			// Picture displayed from the expansions menu. Optimal size is 2048x1024
@@ -11,4 +11,4 @@ overview		= "Fills vanilla objects with the functions they should have had.";	//
 hideName		= 0;						// Hide the extension name
 hidePicture		= 0;						// Hide the extension menu
 dlcColor[]		= { 0.53, 0.81, 0.92, 1 };	// Color used for DLC stripes and backgrounds (RGBA)
-logoSmall		= "img\icon_ca.paa";			// Display in creative lists, next to the entities added by the mod
+logoSmall		= "img\icon_512_ca.paa";			// Display in creative lists, next to the entities added by the mod
