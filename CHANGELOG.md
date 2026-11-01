@@ -13,6 +13,13 @@ version, and start a fresh empty [Unreleased] section above it. -->
 
 ## [Unreleased]
 
+## [1.4.1] - 2026-11-01
+
+### Changed
+
+- Branding - new logo and icon set: the mod icon (`mod.cpp`) is now a 512px icon, with a new Workshop image
+- Documentation - the site is built with Zensical, with the new logo and icon
+
 ## [1.4.0] - 2026-10-05
 
 ### Added
